@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="Witch Game"
+run/main_scene="uid://c5w5e7ihaoy3r"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
+
+[autoload]
+
+QuestManager="*res://Scripts/QuestManager.gd"
