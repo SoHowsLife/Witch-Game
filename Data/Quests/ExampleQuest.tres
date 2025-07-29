@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=7 format=3 uid="uid://b336s4461pl6i"]
+
+[ext_resource type="Script" uid="uid://dl207rxsgf2k1" path="res://Scripts/QuestObjective.gd" id="1_7fhyy"]
+[ext_resource type="Script" uid="uid://dwcobx5u5xvc1" path="res://Scripts/Quest.gd" id="2_38elh"]
+
+[sub_resource type="Resource" id="Resource_lvxtl"]
+script = ExtResource("1_7fhyy")
+type = 0
+target = &"Example Item"
+total = 1
+progress = 0
+metadata/_custom_type_script = "uid://dl207rxsgf2k1"
+
+[sub_resource type="Resource" id="Resource_7fhyy"]
+script = ExtResource("1_7fhyy")
+type = 1
+target = &"Example Enemy"
+total = 1
+progress = 0
+metadata/_custom_type_script = "uid://dl207rxsgf2k1"
+
+[sub_resource type="Resource" id="Resource_38elh"]
+script = ExtResource("1_7fhyy")
+type = 2
+target = &"Example Destination"
+total = 1
+progress = 0
+metadata/_custom_type_script = "uid://dl207rxsgf2k1"
+
+[sub_resource type="Resource" id="Resource_5xjih"]
+script = ExtResource("1_7fhyy")
+type = 3
+target = &"Example NPC"
+total = 1
+progress = 0
+metadata/_custom_type_script = "uid://dl207rxsgf2k1"
+
+[resource]
+script = ExtResource("2_38elh")
+title = "Example Quest"
+description = "An example quest."
+objectives = Array[ExtResource("1_7fhyy")]([SubResource("Resource_lvxtl"), SubResource("Resource_7fhyy"), SubResource("Resource_38elh"), SubResource("Resource_5xjih")])
+metadata/_custom_type_script = "uid://dwcobx5u5xvc1"
