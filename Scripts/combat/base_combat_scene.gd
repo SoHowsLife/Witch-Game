@@ -23,4 +23,5 @@ func give_turn(combatant: Combatant):
 
 
 func _on_turn_finish(combatant: Combatant):
+	combatant.turn_finished.disconnect(_on_turn_finish)
 	pass
