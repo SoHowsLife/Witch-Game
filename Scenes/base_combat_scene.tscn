@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://3hvll6rqj0x"]
+
+[ext_resource type="Script" uid="uid://ced44b2af32qx" path="res://Scripts/combat/base_combat_scene.gd" id="1_gvf7i"]
+[ext_resource type="Script" uid="uid://ci3p022cm10ob" path="res://Scripts/combat/turn_scheduler.gd" id="2_tbw57"]
+
+[node name="BaseCombatScene" type="Node2D"]
+script = ExtResource("1_gvf7i")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_tbw57")
