@@ -13,3 +13,7 @@ config_version=5
 config/name="Witch Game"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
+
+[autoload]
+
+ID="*res://Scripts/ID.gd"
