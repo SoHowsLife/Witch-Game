@@ -19,3 +19,4 @@ config/icon="res://Sprites/icon.svg"
 
 ID="*res://Scripts/ID.gd"
 QuestManager="*res://Scripts/Quest/QuestManager.gd"
+Inventory="*res://Scripts/Inventory.gd"

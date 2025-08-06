@@ -17,7 +17,7 @@ var _folder_path : String = "res://Data/Quests/"
 func _ready():
 	_activate_quest(ID.QuestID.ExampleQuest)
 	print("Active: " + _active_quests[0].title)
-	_on_item_collected(ID.ItemID.ExampleItem1, 1)
+	_on_item_collected(ID.ItemID.ExampleItem, 1)
 	print(_active_quests[0].objectives[0].completed)
 
 ## Returns array of all active quests
