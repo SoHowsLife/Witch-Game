@@ -41,7 +41,7 @@ func load_quest_data(quest_dict : Dictionary):
 	
 func is_quest_completed(quest_id : ID.QuestID) -> bool:
 	for q in _active_quests:
-		if q.ID == quest_id:
+		if q.quest_id == quest_id:
 			for o in q.objectives:
 				if o.completed == false:
 					return false
@@ -88,7 +88,7 @@ func _activate_quest(quest_id : ID.QuestID):
 ## Complete quest by ID
 func _complete_quest(quest_id : ID.QuestID):
 	for i in _active_quests.size():
-		if _active_quests[i].ID == quest_id:
+		if _active_quests[i].quest_id == quest_id:
 			_completed_quests.append(_active_quests[i])
 			quest_completed.emit(_active_quests[i])
 			_active_quests.remove_at(i)
