@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7iut5oc6i8an"]
+
+[ext_resource type="Script" uid="uid://pioagvmiqaft" path="res://Scripts/player.gd" id="1_rpqav"]
+[ext_resource type="Texture2D" uid="uid://3vfwys1ofxh" path="res://Sprites/icon.svg" id="2_kyqiw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kyqiw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kyqiw"]
+size = Vector3(1.5, 1, 1.5)
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_rpqav")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_kyqiw")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("2_kyqiw")
+
+[node name="CameraRelativePosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54369, 2.54657)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0.7)
+
+[node name="InteractArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea"]
+shape = SubResource("BoxShape3D_kyqiw")

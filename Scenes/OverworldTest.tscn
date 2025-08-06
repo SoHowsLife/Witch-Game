@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://yg6p8rya8ia2"]
+
+[ext_resource type="Script" uid="uid://bhuu5a0ihcfbi" path="res://Scripts/player_camera.gd" id="1_1iecc"]
+[ext_resource type="PackedScene" uid="uid://c7iut5oc6i8an" path="res://Scenes/Player.tscn" id="1_8brx4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8brx4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8brx4"]
+
+[node name="OverworldTest" type="Node3D"]
+
+[node name="MainCamera" type="Camera3D" parent="." groups=["PlayerCamera"]]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -0.0530434, 2.23072, 1.90115)
+script = ExtResource("1_1iecc")
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_8brx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0530434, 1.04122, -0.15912)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(63.9744, 0, 0, 0, 1, 0, 0, 0, 52.4679, 0, -0.947988, 0)
+mesh = SubResource("BoxMesh_8brx4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_8brx4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.946409, 0.0651543, -0.316331, 0.171734, 0.72798, 0.663741, 0.273528, -0.682495, 0.677778, -1.02082, 8.10316, 2.70058)
