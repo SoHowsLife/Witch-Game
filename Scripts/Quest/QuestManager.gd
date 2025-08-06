@@ -15,10 +15,7 @@ var _completed_quests : Array[Quest]
 var _folder_path : String = "res://Data/Quests/"
 
 func _ready():
-	_activate_quest(ID.QuestID.ExampleQuest)
-	print("Active: " + _active_quests[0].title)
-	_on_item_collected(ID.ItemID.ExampleItem, 1)
-	print(_active_quests[0].objectives[0].completed)
+	Inventory.inventory_changed.connect(_on_item_collected)
 
 ## Returns array of all active quests
 func get_active_quests() -> Array[Quest]:
