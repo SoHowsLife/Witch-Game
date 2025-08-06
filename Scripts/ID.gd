@@ -1,8 +1,8 @@
 extends Node
 
 enum ItemID {
-	ExampleItem1 = 1,
-	ExampleItem2 = 2,
+	None = 0,
+	ExampleItem = 1,
 }
 
 enum QuestID {
