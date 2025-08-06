@@ -18,4 +18,4 @@ config/icon="res://Sprites/icon.svg"
 [autoload]
 
 ID="*res://Scripts/ID.gd"
-QuestManager="*res://Scripts/QuestManager.gd"
+QuestManager="*res://Scripts/Quest/QuestManager.gd"
