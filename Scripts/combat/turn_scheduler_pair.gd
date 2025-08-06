@@ -1,4 +1,4 @@
-class_name TurnSchedulerPair
+class_name TurnSchedulerTask
 extends Node
 
 var action_value: float

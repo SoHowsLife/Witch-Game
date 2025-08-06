@@ -1,6 +1,7 @@
 class_name CombatStateMachine
 extends Node2D
 
+
 enum CombatState {
 	SCHEDULER_IDLING,
 	AWAITING_TURN_FINISH,
