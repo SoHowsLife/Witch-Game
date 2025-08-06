@@ -10,6 +10,9 @@ var _scheduler_references: Array[TurnSchedulerTask]
 var _health: int = 0
 var _max_health: int = 0
 
+var _attack: int = 0
+var _defense: int = 0
+
 var _speed: float = 10:
 	set(new_speed):
 		_speed = new_speed
