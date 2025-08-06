@@ -107,7 +107,7 @@ func _load_quest(quest_id : ID.QuestID) -> Quest:
 				if file_name.ends_with(".tres"):
 					var quest_path = _folder_path + "/" + file_name
 					var quest = ResourceLoader.load(quest_path) as Quest
-					if quest and quest.ID == quest_id:
+					if quest and quest.quest_id == quest_id:
 						dir_access.list_dir_end()
 						return quest
 			file_name = dir_access.get_next()
