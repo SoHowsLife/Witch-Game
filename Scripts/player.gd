@@ -3,9 +3,12 @@ extends CharacterBody3D
 var camera : Camera3D
 @onready var camera_target = $CameraRelativePosition
 @onready var sprite := $AnimatedSprite3D
-@onready var edge_detect : RayCast3D = $RayCast3D
+@onready var v_edge := $Vertical
+@onready var h_edge := $Horizontal
+@onready var interact_area := $InteractArea
 var looking : String = "S"
 const SPEED = 5.0
+
 
 func _ready() -> void:
 	camera = get_tree().get_first_node_in_group("PlayerCamera")
@@ -20,48 +23,53 @@ func _physics_process(delta: float) -> void:
 
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if input_dir.x > 0:
-		if input_dir.y > 0:
-			looking = "SE"
-			pass #SE
-		elif input_dir.y < 0:
-			looking = "NE"
-			pass #NE
-		else:
-			looking = "E"
-			pass #E
-	elif input_dir.x < 0:
-		if input_dir.y > 0:
-			looking = "SW"
-			pass #SW
-		elif input_dir.y < 0:
-			looking = "NW"
-			pass #NW
-		else:
-			looking = "W"
-			pass #W
-	else:
+	if input_dir != Vector2.ZERO:
+		looking = ""
 		if input_dir.y > 0:
 			looking = "S"
-			pass #S
+			v_edge.position = (Vector3(0, -1, 1)).normalized()
 		elif input_dir.y < 0:
 			looking = "N"
-			pass #N
-	if input_dir != Vector2.ZERO:
-		edge_detect.position = (Vector3(input_dir.x, -1, input_dir.y)).normalized() * 0.7
-		edge_detect.force_raycast_update()
-	if edge_detect.is_colliding():
-		if direction:
+			v_edge.position = (Vector3(0, -1, -1)).normalized()
+		if input_dir.x > 0:
+			looking += "E"
+			h_edge.position = (Vector3(1, -1, 0)).normalized()
+		elif input_dir.x < 0:
+			looking += "W"
+			h_edge.position = (Vector3(-1, -1, 0)).normalized()
+		v_edge.force_raycast_update()
+		h_edge.force_raycast_update()
+	if direction:
+		if h_edge.is_colliding():
 			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
-			sprite.animation = "walk_" + looking
 		else:
+			velocity.x = 0
+		if v_edge.is_colliding():
+			velocity.z = direction.z * SPEED
+		else:
+			velocity.z = 0
+		sprite.animation = "walk_" + looking
+	else:
+		if h_edge.is_colliding() || v_edge.is_colliding():
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
-			sprite.animation = "idle_" + looking
-	else:
+		else:
 			velocity.x = 0
 			velocity.z = 0
-			sprite.animation = "idle_" + looking
-
+		sprite.animation = "idle_" + looking
 	move_and_slide()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("interact"):
+		if interact_area.has_overlapping_bodies():
+			for body in interact_area.get_overlapping_bodies():
+				if body is Interactable:
+					body.interact()
+					break
+
+
+func _on_interact_area_body_entered(body: Node3D) -> void:
+	print("TEST ENTER ", body)
+
+func _on_interact_area_body_exited(body: Node3D) -> void:
+	print("TEST EXIT ", body)

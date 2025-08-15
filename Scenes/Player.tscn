@@ -1210,7 +1210,7 @@ animations = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kyqiw"]
-size = Vector3(2, 1, 2)
+size = Vector3(3, 1, 3)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rpqav")
@@ -1227,12 +1227,19 @@ animation = &"walk_W"
 autoplay = "idle_S"
 
 [node name="CameraRelativePosition" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.86673, 7.41809)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.86673, 5.29766)
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="Vertical" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0.7)
 
+[node name="Horizontal" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, -0.7, 0)
+
 [node name="InteractArea" type="Area3D" parent="."]
+collision_mask = 128
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea"]
 shape = SubResource("BoxShape3D_kyqiw")
+
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]

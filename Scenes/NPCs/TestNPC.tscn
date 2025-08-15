@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c43jhgbgm3oin"]
+
+[ext_resource type="Texture2D" uid="uid://3vfwys1ofxh" path="res://Sprites/icon.svg" id="1_yga74"]
+[ext_resource type="Script" uid="uid://lyh5fabdr2yu" path="res://Scripts/NPC/test_npc.gd" id="1_ykm2c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ykm2c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yga74")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yga74"]
+
+[node name="TestNpc" type="CharacterBody3D"]
+collision_layer = 129
+script = ExtResource("1_ykm2c")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ykm2c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_yga74")
