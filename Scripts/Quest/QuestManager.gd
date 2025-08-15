@@ -15,10 +15,7 @@ var _completed_quests : Array[Quest]
 var _folder_path : String = "res://Data/Quests/"
 
 func _ready():
-	_activate_quest(ID.QuestID.ExampleQuest)
-	print("Active: " + _active_quests[0].title)
-	_on_item_collected(ID.ItemID.ExampleItem, 1)
-	print(_active_quests[0].objectives[0].completed)
+	Inventory.inventory_changed.connect(_on_item_collected)
 
 ## Returns array of all active quests
 func get_active_quests() -> Array[Quest]:
@@ -41,7 +38,7 @@ func load_quest_data(quest_dict : Dictionary):
 	
 func is_quest_completed(quest_id : ID.QuestID) -> bool:
 	for q in _active_quests:
-		if q.ID == quest_id:
+		if q.quest_id == quest_id:
 			for o in q.objectives:
 				if o.completed == false:
 					return false
@@ -88,7 +85,7 @@ func _activate_quest(quest_id : ID.QuestID):
 ## Complete quest by ID
 func _complete_quest(quest_id : ID.QuestID):
 	for i in _active_quests.size():
-		if _active_quests[i].ID == quest_id:
+		if _active_quests[i].quest_id == quest_id:
 			_completed_quests.append(_active_quests[i])
 			quest_completed.emit(_active_quests[i])
 			_active_quests.remove_at(i)
@@ -107,7 +104,7 @@ func _load_quest(quest_id : ID.QuestID) -> Quest:
 				if file_name.ends_with(".tres"):
 					var quest_path = _folder_path + "/" + file_name
 					var quest = ResourceLoader.load(quest_path) as Quest
-					if quest and quest.ID == quest_id:
+					if quest and quest.quest_id == quest_id:
 						dir_access.list_dir_end()
 						return quest
 			file_name = dir_access.get_next()

@@ -6,5 +6,6 @@ enum ItemID {
 }
 
 enum QuestID {
+	None = 0,
 	ExampleQuest = 1,
 }
