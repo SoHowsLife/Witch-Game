@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=5 format=3 uid="uid://b336s4461pl6i"]
+
+[ext_resource type="Script" uid="uid://dl207rxsgf2k1" path="res://Scripts/Quest/QuestObjective.gd" id="1_38elh"]
+[ext_resource type="Script" uid="uid://y3uexlhxqtj6" path="res://Scripts/Quest/ItemQuestObjective.gd" id="2_5xjih"]
+[ext_resource type="Script" uid="uid://dwcobx5u5xvc1" path="res://Scripts/Quest/Quest.gd" id="3_0urfo"]
+
+[sub_resource type="Resource" id="Resource_38elh"]
+script = ExtResource("2_5xjih")
+item = 1
+amount = 1
+metadata/_custom_type_script = "uid://y3uexlhxqtj6"
+
+[resource]
+script = ExtResource("3_0urfo")
+quest_id = 1
+title = "Example Quest"
+description = "An example quest."
+objectives = Array[ExtResource("1_38elh")]([SubResource("Resource_38elh")])
+metadata/_custom_type_script = "uid://dwcobx5u5xvc1"
