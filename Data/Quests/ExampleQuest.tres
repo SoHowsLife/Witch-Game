@@ -12,7 +12,7 @@ metadata/_custom_type_script = "uid://y3uexlhxqtj6"
 
 [resource]
 script = ExtResource("3_0urfo")
-ID = 1
+quest_id = 1
 title = "Example Quest"
 description = "An example quest."
 objectives = Array[ExtResource("1_38elh")]([SubResource("Resource_38elh")])

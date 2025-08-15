@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://sr5u4s5mom1j"]
+
+[ext_resource type="Script" uid="uid://bt0websrasife" path="res://Scripts/Item/EquipData.gd" id="1_kkb8q"]
+[ext_resource type="Script" uid="uid://bhjvfxs51vg5p" path="res://Scripts/Item/ItemData.gd" id="2_frvl4"]
+
+[sub_resource type="Resource" id="Resource_vjk8n"]
+script = ExtResource("1_kkb8q")
+max_health = 0
+defense = 0
+damage = 0
+damage_mult = 1.0
+thorns_mult = 0.0
+metadata/_custom_type_script = "uid://bt0websrasife"
+
+[resource]
+script = ExtResource("2_frvl4")
+ID = 1
+name = "Example Item"
+description = "An example item."
+usable_in_world = false
+usable_in_battle = false
+consumable = false
+buy_price = 0
+sell_price = 0
+equip_type = 0
+equip_data = SubResource("Resource_vjk8n")
+metadata/_custom_type_script = "uid://bhjvfxs51vg5p"
