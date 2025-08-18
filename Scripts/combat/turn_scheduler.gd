@@ -8,11 +8,56 @@ const MAX_FORESEEABLE_TURNS: int = 10
 var _total_speed: float
 
 var _schedule: Array[TurnSchedulerTask]
+var _attached_combatants: Array[Combatant]
+
 
 
 func advance_scheduler():
 	pass
 
 
+func populate_scheduler():
+	pass
+
+
+func validate_scheduler():
+	pass
+
+
+func _attach_to_scheduler(combatant: Combatant):
+	combatant.turns_added.connect(_on_request_add_turns)
+	combatant.turns_removed.connect(_on_request_remove_turns)
+	combatant.speed_changed.connect(_on_combatant_speed_changed)
+
+
 func sort_scheduler_queue():
 	_schedule.sort_custom(TurnSchedulerTask.task_compare)
+
+
+func _on_combatant_speed_changed(_combatant: Combatant, _speed: float):
+	var new_tspd = _get_tspd()
+	for combatant in _attached_combatants:
+		combatant.validate_turn_scheduler(new_tspd, MAX_FORESEEABLE_TURNS)
+	sort_scheduler_queue()
+
+
+func _on_combatant_turn_moved():
+	sort_scheduler_queue()
+
+
+func _on_request_add_turns(added_turns: Array[TurnSchedulerTask]):
+	for turn in added_turns:
+		_schedule.push_back(turn)
+	sort_scheduler_queue()
+
+
+func _on_request_remove_turns(removed_turns: Array[TurnSchedulerTask]):
+	for turn in removed_turns:
+		_schedule.erase(turn)
+
+
+func _get_tspd() -> int:
+	var total := 0
+	for combatant in _attached_combatants:
+		total += combatant.get_speed()
+	return total
