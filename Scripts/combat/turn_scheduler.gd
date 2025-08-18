@@ -12,22 +12,38 @@ var _attached_combatants: Array[Combatant]
 
 
 
-func advance_scheduler():
-	pass
+func advance_scheduler() -> Combatant:
+	for turn in _schedule:
+		turn.turn_time -= _schedule.front().turn_time
+	return _schedule.front().attached_combatant
 
 
 func populate_scheduler():
-	pass
+	var new_tspd = _get_tspd()
+	for combatant in _attached_combatants:
+		combatant.generate_turn_population(new_tspd, MAX_FORESEEABLE_TURNS)
 
 
 func validate_scheduler():
-	pass
+	var new_tspd = _get_tspd()
+	for combatant in _attached_combatants:
+		combatant.validate_turn_scheduler(new_tspd, MAX_FORESEEABLE_TURNS)
 
 
-func _attach_to_scheduler(combatant: Combatant):
+func attach_to_scheduler(combatant: Combatant):
+	_attached_combatants.push_back(combatant)
 	combatant.turns_added.connect(_on_request_add_turns)
 	combatant.turns_removed.connect(_on_request_remove_turns)
 	combatant.speed_changed.connect(_on_combatant_speed_changed)
+	combatant.turn_moved.connect(_on_combatant_turn_moved)
+
+
+func detach_from_scheduler(combatant: Combatant):
+	_attached_combatants.erase(combatant)
+	combatant.turns_added.disconnect(_on_request_add_turns)
+	combatant.turns_removed.disconnect(_on_request_remove_turns)
+	combatant.speed_changed.disconnect(_on_combatant_speed_changed)
+	combatant.turn_moved.disconnect(_on_combatant_turn_moved)
 
 
 func sort_scheduler_queue():
