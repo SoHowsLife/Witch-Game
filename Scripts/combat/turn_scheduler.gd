@@ -3,7 +3,9 @@ extends Node
 
 signal request_update
 
-const MAX_FORESEEABLE_ACTION_VALUE = 50
+const MAX_FORESEEABLE_TURNS: int = 10
+
+var _total_speed: float
 
 var _schedule: Array[TurnSchedulerTask]
 
