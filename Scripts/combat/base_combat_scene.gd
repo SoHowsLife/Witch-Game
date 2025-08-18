@@ -1,5 +1,5 @@
 class_name CombatStateMachine
-extends Node2D
+extends Node3D
 
 
 enum CombatState {
