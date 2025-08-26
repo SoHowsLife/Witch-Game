@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ditw4kn5tts50"
-path.s3tc="res://.godot/imported/Ucupaint Test Painting Color.png-916a225921f2a6b483fed0d5dedeeda1.s3tc.ctex"
+uid="uid://ctxpq1f0djxn"
+path.s3tc="res://.godot/imported/Village Wall.png-59285a2e12f65d65e3e6add10faca05e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://Models/3D Models/textures/Ucupaint Test Painting Color.png"
-dest_files=["res://.godot/imported/Ucupaint Test Painting Color.png-916a225921f2a6b483fed0d5dedeeda1.s3tc.ctex"]
+source_file="res://Models/3D Models/textures/Village Wall.png"
+dest_files=["res://.godot/imported/Village Wall.png-59285a2e12f65d65e3e6add10faca05e.s3tc.ctex"]
 
 [params]
 

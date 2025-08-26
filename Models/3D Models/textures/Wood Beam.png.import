@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ymvj0dktluhp"
-path.s3tc="res://.godot/imported/zen-color-1024x1024.png-097b1c2bfd54f1503f507bdc3d212289.s3tc.ctex"
+uid="uid://djgq0q55r61k7"
+path.s3tc="res://.godot/imported/Wood Beam.png-0264186fe6c4db8b1605f8c166705483.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://Models/3D Models/textures/zen-color-1024x1024.png"
-dest_files=["res://.godot/imported/zen-color-1024x1024.png-097b1c2bfd54f1503f507bdc3d212289.s3tc.ctex"]
+source_file="res://Models/3D Models/textures/Wood Beam.png"
+dest_files=["res://.godot/imported/Wood Beam.png-0264186fe6c4db8b1605f8c166705483.s3tc.ctex"]
 
 [params]
 
