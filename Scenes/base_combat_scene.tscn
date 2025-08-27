@@ -7,5 +7,6 @@
 script = ExtResource("1_gvf7i")
 metadata/_custom_type_script = "uid://ced44b2af32qx"
 
-[node name="Node" type="Node" parent="."]
+[node name="TurnScheduler" type="Node" parent="."]
 script = ExtResource("2_tbw57")
+metadata/_custom_type_script = "uid://ci3p022cm10ob"
