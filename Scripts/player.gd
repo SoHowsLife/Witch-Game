@@ -8,7 +8,7 @@ var camera : Camera3D
 @onready var interact_area := $InteractArea
 var looking : String = "S"
 const SPEED = 5.0
-
+var can_move : bool = true
 
 func _ready() -> void:
 	camera = get_tree().get_first_node_in_group("PlayerCamera")
@@ -20,7 +20,6 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if input_dir != Vector2.ZERO:
@@ -39,7 +38,7 @@ func _physics_process(delta: float) -> void:
 			h_edge.position = (Vector3(-1, -1, 0)).normalized()
 		v_edge.force_raycast_update()
 		h_edge.force_raycast_update()
-	if direction:
+	if direction && can_move:
 		if h_edge.is_colliding():
 			velocity.x = direction.x * SPEED
 		else:

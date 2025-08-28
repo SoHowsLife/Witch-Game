@@ -1,0 +1,6 @@
+if {TestNPC.TestOver} == true:
+	return
+TestNPC: [lspeed = 0.15!][ns = 0.1]change da world
+TestNPC: [lspeed = 0.15!][ns = 0.1]my final message.
+TestNPC: [lspeed = 0.15!][ns = 0.1]Goodb ye
+set {TestNPC.TestOver} = true
