@@ -92,6 +92,10 @@ func readd_ended_turn():
 	_scheduler_references.push_back(_scheduler_references.pop_front())
 
 
+func receive_turn():
+	pass
+
+
 ## Moves all of this combatant's turns by time proportional to BTT and [param multiplier].
 ## Effective domain [-INF, 1], where a negative value delays turns.
 func move_turn_by_percent(multiplier: float):
