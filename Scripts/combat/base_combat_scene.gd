@@ -20,6 +20,7 @@ func init_combat():
 		_scheduler.attach_to_scheduler(ally)
 	for enemy in enemy_combatants:
 		_scheduler.attach_to_scheduler(enemy)
+	_scheduler.populate_scheduler()
 	pass
 
 
@@ -44,4 +45,5 @@ func _on_turn_finish(combatant: Combatant):
 	combatant.readd_ended_turn()
 	_scheduler.sort_scheduler_queue()
 	state = CombatState.SCHEDULER_IDLING
+	state_update()
 	pass
