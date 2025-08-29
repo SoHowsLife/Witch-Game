@@ -76,7 +76,6 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 "Level Positions"="Start Positions for the Player"
 Player=""
-=======
 CombatRules="*res://Scripts/combat/combat_rules.gd"
 
 [input]
