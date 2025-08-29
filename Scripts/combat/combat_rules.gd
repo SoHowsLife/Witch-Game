@@ -53,6 +53,6 @@ func _calculate_incoming_damage_modifier(defender: StatsComponent, is_crit: bool
 		
 
 
-func _calculate_elemental_modifier(element: CombatRules.Elements, defender: StatsComponent,
+func _calculate_elemental_modifier(element: Elements, defender: StatsComponent,
 		penetration: float) -> float:
 	return defender.get_resist_multiplier(element) + penetration

@@ -23,6 +23,7 @@ Inventory="*res://Scripts/Inventory.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 DialogueScreen="*res://Scenes/DialogueScreen.tscn"
 LevelTransitionManager="*res://Scenes/Level/LevelTransitionManager.tscn"
+CombatRules="*res://Scripts/combat/combat_rules.gd"
 
 [dialogic]
 
