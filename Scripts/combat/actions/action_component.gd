@@ -1,9 +1,9 @@
 class_name ActionComponent
 extends Node
 
-var possible_attacks: Array[Variant]
-var possible_supports: Array[Variant]
-var possible_else: Array[Variant]
+var possible_attacks: Array[ActionData]
+var possible_supports: Array[ActionData]
+var possible_else: Array[ActionData]
 
 
 func request_agent_input():
