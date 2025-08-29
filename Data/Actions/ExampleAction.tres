@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ActionData" load_steps=2 format=3 uid="uid://bieh7xm4adgdt"]
+
+[ext_resource type="Script" uid="uid://bucjs2sidyhkd" path="res://Scripts/combat/actions/action_data.gd" id="1_yqfvh"]
+
+[resource]
+script = ExtResource("1_yqfvh")
+action_id = 1
+name = "Example Action"
+description = "Does a thing."
+category = 2
+effects = []
+animation = false
+target_type = 0
+metadata/_custom_type_script = "uid://bucjs2sidyhkd"
