@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 var camera : Camera3D
@@ -8,7 +9,7 @@ var camera : Camera3D
 @onready var interact_area := $InteractArea
 var looking : String = "S"
 const SPEED = 5.0
-
+var can_move : bool = true
 
 func _ready() -> void:
 	camera = get_tree().get_first_node_in_group("PlayerCamera")
@@ -17,10 +18,12 @@ func _ready() -> void:
 		#sprite.rotation.x = camera.rotation.x
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	if Dialogic.current_timeline != null || not can_move:
+		sprite.animation = "idle_" + looking
+		return
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if input_dir != Vector2.ZERO:
