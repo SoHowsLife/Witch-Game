@@ -17,6 +17,9 @@ func _ready() -> void:
 		#sprite.rotation.x = camera.rotation.x
 
 func _physics_process(delta: float) -> void:
+	if Dialogic.current_timeline != null:
+		sprite.animation = "idle_" + looking
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

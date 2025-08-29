@@ -35,6 +35,9 @@ directories/dtl_directory={
 "start": "res://Dialogue/start.dtl"
 }
 variables={
+"Player": {
+"LockPlayer": false
+},
 "TestNPC": {
 "TestOver": false
 }
