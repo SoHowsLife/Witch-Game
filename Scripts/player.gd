@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 var camera : Camera3D
@@ -17,10 +18,10 @@ func _ready() -> void:
 		#sprite.rotation.x = camera.rotation.x
 
 func _physics_process(delta: float) -> void:
-	if Dialogic.current_timeline != null:
+	if Dialogic.current_timeline != null || not can_move:
 		sprite.animation = "idle_" + looking
 		return
-	# Add the gravity.
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	var input_dir := Input.get_vector("left", "right", "up", "down")
@@ -41,7 +42,7 @@ func _physics_process(delta: float) -> void:
 			h_edge.position = (Vector3(-1, -1, 0)).normalized()
 		v_edge.force_raycast_update()
 		h_edge.force_raycast_update()
-	if direction && can_move:
+	if direction:
 		if h_edge.is_colliding():
 			velocity.x = direction.x * SPEED
 		else:

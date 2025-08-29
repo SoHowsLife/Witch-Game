@@ -22,6 +22,7 @@ QuestManager="*res://Scripts/Quest/QuestManager.gd"
 Inventory="*res://Scripts/Inventory.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 DialogueScreen="*res://Scenes/DialogueScreen.tscn"
+LevelTransitionManager="*res://Scenes/Level/LevelTransitionManager.tscn"
 
 [dialogic]
 
@@ -70,6 +71,11 @@ portraits/default_portrait=""
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[global_group]
+
+"Level Positions"="Start Positions for the Player"
+Player=""
 
 [input]
 

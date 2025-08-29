@@ -9,6 +9,7 @@ func _process(delta: float) -> void:
 	if Dialogic.VAR.TestNPC.TestOver:
 		sprite.modulate.a = move_toward(sprite.modulate.a, 0, delta)
 		if sprite.modulate.a <= 0.01:
+			Dialogic.VAR.TestNPC.TestOver = false
 			self.queue_free()
 
 func interact() -> void:
