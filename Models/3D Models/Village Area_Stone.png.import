@@ -2,18 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3aoeia8v6p7b"
-path.s3tc="res://.godot/imported/Wood Planks.png-cbac3d57355df05ddb792fec9ad2c1a3.s3tc.ctex"
+uid="uid://btysycque35wx"
+path.s3tc="res://.godot/imported/Village Area_Stone.png-9854640bd5b95cb38b7d3dd555ae8260.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "daa66dbf05d8944d3a206dc6d8141a22"
+}
 
 [deps]
 
-source_file="res://Models/3D Models/textures/Wood Planks.png"
-dest_files=["res://.godot/imported/Wood Planks.png-cbac3d57355df05ddb792fec9ad2c1a3.s3tc.ctex"]
+source_file="res://Models/3D Models/Village Area_Stone.png"
+dest_files=["res://.godot/imported/Village Area_Stone.png-9854640bd5b95cb38b7d3dd555ae8260.s3tc.ctex"]
 
 [params]
 

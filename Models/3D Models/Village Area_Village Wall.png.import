@@ -2,18 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bal3lj4doatbt"
-path.s3tc="res://.godot/imported/FlowerExample.png-59de2da27d92f135b4fc378887465c5c.s3tc.ctex"
+uid="uid://dxuv6bcvtchnh"
+path.s3tc="res://.godot/imported/Village Area_Village Wall.png-c1a4d6490ae5d954a84fbb9ed3729df5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "39ca6f706dd164d9559c5057957ecbad"
+}
 
 [deps]
 
-source_file="res://Models/3D Models/textures/FlowerExample.png"
-dest_files=["res://.godot/imported/FlowerExample.png-59de2da27d92f135b4fc378887465c5c.s3tc.ctex"]
+source_file="res://Models/3D Models/Village Area_Village Wall.png"
+dest_files=["res://.godot/imported/Village Area_Village Wall.png-c1a4d6490ae5d954a84fbb9ed3729df5.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://coh1k8kgaiyg3"]
+
+[resource]
+resource_name = "Ground"
+cull_mode = 2
+albedo_color = Color(0.657521, 0.89831, 0.656577, 1)

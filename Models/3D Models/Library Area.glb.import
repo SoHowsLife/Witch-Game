@@ -1,0 +1,72 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://h0wj5mfgysqv"
+path="res://.godot/imported/Library Area.glb-4d3b1b84b16d3ff9e1a43f8be9d1f37a.scn"
+
+[deps]
+
+source_file="res://Models/3D Models/Library Area.glb"
+dest_files=["res://.godot/imported/Library Area.glb-4d3b1b84b16d3ff9e1a43f8be9d1f37a.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Ground": {
+"use_external/enabled": true,
+"use_external/path": "uid://coh1k8kgaiyg3"
+},
+"Roof": {
+"use_external/enabled": true,
+"use_external/path": "uid://bxrrgr31jwdlc"
+},
+"Stone": {
+"use_external/enabled": true,
+"use_external/path": "uid://dx25v1fydvqmf"
+},
+"Tree": {
+"use_external/enabled": true,
+"use_external/path": "uid://bqavph8mppk2s"
+},
+"Village Wall": {
+"use_external/enabled": true,
+"use_external/path": "uid://cnxu3mwsy4nki"
+},
+"Window": {
+"use_external/enabled": true,
+"use_external/path": "uid://wedcifajk4xv"
+},
+"Wood Planks": {
+"use_external/enabled": true,
+"use_external/path": "uid://c3as164prrrtj"
+},
+"Wooden Beam": {
+"use_external/enabled": true,
+"use_external/path": "uid://eyqki30eexmh"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=0

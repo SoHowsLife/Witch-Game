@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bxrrgr31jwdlc"]
+
+[resource]
+resource_name = "Roof"
+cull_mode = 2
+albedo_color = Color(0.192156, 0.0941177, 0.0901952, 1)
