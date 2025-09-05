@@ -1,0 +1,180 @@
+[gd_scene load_steps=23 format=3 uid="uid://npwhafrqpk4r"]
+
+[ext_resource type="Script" uid="uid://bgbgy4eb24rtm" path="res://Scripts/Level/level_start_pos.gd" id="1_hpbu3"]
+[ext_resource type="Script" uid="uid://bhuu5a0ihcfbi" path="res://Scripts/player_camera.gd" id="2_00m3m"]
+[ext_resource type="PackedScene" uid="uid://c7iut5oc6i8an" path="res://Scenes/Player.tscn" id="3_iavrp"]
+[ext_resource type="Script" uid="uid://e2nnrd448mgb" path="res://Scripts/Level/level_transition.gd" id="4_gpo16"]
+[ext_resource type="PackedScene" uid="uid://cx0h1mdvi1ea2" path="res://Models/3D Models/Village Area.glb" id="4_ujtmb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hpbu3"]
+size = Vector3(118.104, 1, 140.509)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_00m3m"]
+size = Vector3(0.779449, 8.72876, 9.02429)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e6en4"]
+size = Vector3(5.51929, 3.65808, 6.93359)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h4c2s"]
+size = Vector3(4.26636, 3.48767, 8.2782)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n3gpb"]
+size = Vector3(14.3201, 7.00635, 16.351)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6hw0d"]
+size = Vector3(4.82007, 7.70142, 13.1226)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_32wo7"]
+size = Vector3(56.1354, 26.1111, 15.3752)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iavrp"]
+size = Vector3(92.3577, 9.55399, 20.8629)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yv18x"]
+size = Vector3(15.3125, 8.22473, 35.5537)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gpo16"]
+size = Vector3(13.1428, 5.56641, 10.9105)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_25oke"]
+size = Vector3(10.1366, 12.5127, 8.94666)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qy6il"]
+size = Vector3(9.05212, 5.42468, 7.96837)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lqoq1"]
+size = Vector3(27.9678, 1.50293, 0.704224)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wf1ns"]
+size = Vector3(5.05179, 4.43414, 3.03113)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tly7m"]
+size = Vector3(1.99667, 1.99792, 6.00055)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hpbu3"]
+height = 7.1123
+radius = 1.09961
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dxctl"]
+size = Vector3(10.9318, 2.77393, 21.4991)
+
+[node name="VillageArea" type="Node3D"]
+
+[node name="LevelStartPos" type="Node3D" parent="." node_paths=PackedStringArray("start_nodes") groups=["Level Positions"]]
+script = ExtResource("1_hpbu3")
+start_nodes = [NodePath("0"), NodePath("1")]
+
+[node name="0" type="Marker3D" parent="LevelStartPos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3158, 0.629483, -4.56769)
+gizmo_extents = 3.0
+
+[node name="1" type="Marker3D" parent="LevelStartPos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4976, 0.629483, -15.9604)
+gizmo_extents = 3.0
+
+[node name="MainCamera" type="Camera3D" parent="." groups=["PlayerCamera"]]
+transform = Transform3D(1, 0, 0, 0, -0.947768, 0.318959, 0, -0.318959, -0.947768, -0.0530434, 2.23072, 1.90115)
+script = ExtResource("2_00m3m")
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_iavrp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0530434, 1.04122, -7.09976)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.946409, 0.0651543, -0.316331, 0.171734, 0.72798, 0.663741, 0.273528, -0.682495, 0.677778, -1.02082, 8.10316, 2.70058)
+
+[node name="Village Area" parent="." instance=ExtResource("4_ujtmb")]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Village Area"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+shape = SubResource("BoxShape3D_hpbu3")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.6371, 0, -16.3001)
+shape = SubResource("BoxShape3D_00m3m")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3418, 1.32904, -17.2796)
+shape = SubResource("BoxShape3D_e6en4")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1973, 1.66089, -16.5579)
+shape = SubResource("BoxShape3D_h4c2s")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.94222, 3.00317, -30.4787)
+shape = SubResource("BoxShape3D_n3gpb")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.68842, 3.00317, -31.3618)
+shape = SubResource("BoxShape3D_6hw0d")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.893792, 3.00317, -41.9729)
+shape = SubResource("BoxShape3D_32wo7")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9991, 3.00317, -27.4659)
+shape = SubResource("BoxShape3D_32wo7")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.9577, 3.00317, -30.7193)
+shape = SubResource("BoxShape3D_32wo7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.27699, 22.0415)
+shape = SubResource("BoxShape3D_iavrp")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.1394, 2.60957, 8.59225)
+shape = SubResource("BoxShape3D_yv18x")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5137, 4.27699, 8.99293)
+shape = SubResource("BoxShape3D_gpo16")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1361, 0, -1.07355)
+shape = SubResource("BoxShape3D_25oke")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.7888, 2.21234, -0.978205)
+shape = SubResource("BoxShape3D_qy6il")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1397, 0.81663, -7.02379)
+shape = SubResource("BoxShape3D_lqoq1")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8008, 1.71707, 4.03898)
+shape = SubResource("BoxShape3D_wf1ns")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0569, 0.498962, 4.81921)
+shape = SubResource("BoxShape3D_tly7m")
+debug_color = Color(0, 0.6, 0.701961, 0.701961)
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.101, 3.05511, 4.81921)
+shape = SubResource("CylinderShape3D_hpbu3")
+debug_color = Color(0, 0.6, 0.701961, 0.701961)
+
+[node name="LoadingAreaWest" type="Area3D" parent="Village Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.6492, 1.10553, 0)
+collision_mask = 64
+script = ExtResource("4_gpo16")
+target_level = "StartArea"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village Area/LoadingAreaWest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512638, 0.886963, 0)
+shape = SubResource("BoxShape3D_dxctl")
+
+[node name="LoadingAreaEast" type="Area3D" parent="Village Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8962, 1.10553, -17.0902)
+collision_mask = 64
+script = ExtResource("4_gpo16")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Village Area/LoadingAreaEast"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73243, 0.886963, -1.34715)
+shape = SubResource("BoxShape3D_dxctl")

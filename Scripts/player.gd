@@ -8,13 +8,15 @@ var camera : Camera3D
 @onready var h_edge := $Horizontal
 @onready var interact_area := $InteractArea
 var looking : String = "S"
-const SPEED = 5.0
+const SPEED = 10.0
 var can_move : bool = true
 
 func _ready() -> void:
 	camera = get_tree().get_first_node_in_group("PlayerCamera")
 	if camera:
 		camera.target = camera_target
+		camera.rotation.x = -atan2(camera_target.position.y, camera_target.position.z)
+		print(camera.rotation)
 		#sprite.rotation.x = camera.rotation.x
 
 func _physics_process(delta: float) -> void:
