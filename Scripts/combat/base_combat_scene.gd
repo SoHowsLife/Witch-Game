@@ -7,12 +7,21 @@ enum CombatState {
 	AWAITING_TURN_FINISH,
 }
 
+@export var print_debug: bool = false
+@export var ally_combatants: Array[Combatant] = []
+@export var enemy_combatants: Array[Combatant] = []
+
 var state: CombatState = CombatState.SCHEDULER_IDLING
 
-var ally_combatants: Array[Combatant] = []
-var enemy_combatants: Array[Combatant] = []
-
 @onready var _scheduler: TurnScheduler = $"TurnScheduler"
+
+
+func _ready() -> void:
+	print("Initializing combat scene...")
+	print(ally_combatants)
+	init_combat()
+	print("Combat scene initialized.")
+	
 
 
 func init_combat():

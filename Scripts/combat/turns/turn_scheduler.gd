@@ -75,5 +75,5 @@ func _on_request_remove_turns(removed_turns: Array[TurnSchedulerTask]):
 func _get_tspd() -> int:
 	var total := 0
 	for combatant in _attached_combatants:
-		total += combatant.get_speed()
+		total += combatant.speed
 	return total

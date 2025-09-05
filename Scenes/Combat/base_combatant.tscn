@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://fh34kjippoc1"]
+
+[ext_resource type="Script" uid="uid://b4hk8p1boedon" path="res://Scripts/combat/combatant.gd" id="1_umgg8"]
+[ext_resource type="Script" uid="uid://ppqhb3fh5wik" path="res://Scripts/combat/stats/stats_component.gd" id="2_5xsma"]
+
+[node name="BaseCombatant" type="Node3D"]
+script = ExtResource("1_umgg8")
+metadata/_custom_type_script = "uid://b4hk8p1boedon"
+
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("2_5xsma")
+metadata/_custom_type_script = "uid://ppqhb3fh5wik"

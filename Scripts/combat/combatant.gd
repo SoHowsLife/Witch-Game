@@ -1,5 +1,5 @@
 class_name Combatant
-extends Node2D
+extends Node3D
 
 const SPEED_CONSTANT: float = 100
 
@@ -9,48 +9,37 @@ signal turn_finished(combatant: Combatant)
 signal turns_added(task: Array[TurnSchedulerTask])
 signal turns_removed(task: Array[TurnSchedulerTask])
 
+@export var combatant_template: CombatantData
+
+
+var speed: float:
+	get:
+		return stats.effective_SPD
+
 var _scheduler_references: Array[TurnSchedulerTask]
-var _speed: float = 10:
-	set(new_speed):
-		if new_speed <= 0:
-			_speed = 0
-			for turn in _scheduler_references:
-				turn.turn_time = INF
-			_base_turn_time = INF
-			speed_changed.emit(self, _speed)
-		else:
-			for turn in _scheduler_references:
-				turn.turn_time /= new_speed / _speed
-			_base_turn_time = SPEED_CONSTANT / new_speed
-			_speed = new_speed
-			speed_changed.emit(self, _speed)
 var _base_turn_time: float = 10
 var _remaining_turn_time:
 	get():
 		return _scheduler_references.front().turn_time
 var _turn_share: int = 0
-var _active_status_effects: Array[Variant] = []
 
+@onready var stats: StatsComponent = $"StatsComponent"
 
-func init_stats(stats_spec):
+func _ready() -> void:
+	if combatant_template:
+		init_stats(combatant_template)
+	stats.speed_changed.connect(_on_stats_speed_changed)
 	pass
 
 
-func change_speed_absolute(difference: float):
-	_speed = clampf(_speed + difference, 0, INF)
-
-
-func change_speed_multiply(multiplier: float):
-	_speed = clampf(_speed * multiplier, 0, INF)
-
-
-func get_speed() -> float:
-	return _speed
+func init_stats(stats_spec: CombatantData):
+	stats.init_stats(stats_spec.stat_spread)
+	pass
 
 
 func generate_turn_population(total_speed: float, displayed_turns: int) -> bool:
 	_scheduler_references = []
-	_turn_share = _turn_share >= ceili(total_speed / _speed * displayed_turns)
+	_turn_share = _turn_share >= ceili(total_speed / speed * displayed_turns)
 	for i in range(_turn_share):
 		var task = TurnSchedulerTask.new()
 		task.attached_combatant = self
@@ -65,7 +54,7 @@ func validate_turn_scheduler(total_speed: float, displayed_turns: int) -> bool:
 		push_warning("Tried to validate empty turns: ", self)
 		return false
 
-	var new_turn_share = ceili(total_speed / _speed * displayed_turns)
+	var new_turn_share = ceili(total_speed / speed * displayed_turns)
 	if _turn_share == new_turn_share:
 		return true
 	elif _turn_share < new_turn_share:
@@ -103,3 +92,16 @@ func move_turn_by_percent(multiplier: float):
 	for turn in _scheduler_references:
 		turn.turn_time -= movement
 	turn_moved.emit(self)
+
+
+func _on_stats_speed_changed(new_speed: float, old_speed: float):
+	if new_speed <= 0:
+		for turn in _scheduler_references:
+			turn.turn_time = INF
+		_base_turn_time = INF
+		speed_changed.emit(self, new_speed)
+	else:
+		for turn in _scheduler_references:
+			turn.turn_time /= new_speed / old_speed
+		_base_turn_time = SPEED_CONSTANT / new_speed
+		speed_changed.emit(self, new_speed)
