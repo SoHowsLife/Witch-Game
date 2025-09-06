@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://dw4tb42mb3b48"]
+
+[ext_resource type="Script" uid="uid://bgbgy4eb24rtm" path="res://Scripts/Level/level_start_pos.gd" id="1_vaka2"]
+[ext_resource type="Script" uid="uid://bhuu5a0ihcfbi" path="res://Scripts/player_camera.gd" id="2_72uea"]
+[ext_resource type="PackedScene" uid="uid://c7iut5oc6i8an" path="res://Scenes/Player.tscn" id="3_pleka"]
+[ext_resource type="PackedScene" uid="uid://c06nfq0qp0lsh" path="res://Models/3D Models/Start Area.glb" id="4_72uea"]
+[ext_resource type="Script" uid="uid://e2nnrd448mgb" path="res://Scripts/Level/level_transition.gd" id="5_awd6t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pt7rl"]
+size = Vector3(32.3674, 8.69055, 7.9697)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_awd6t"]
+size = Vector3(8.39624, 7.95337, 9.40198)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_72uea"]
+size = Vector3(31.0596, 1, 32.9814)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sdpi2"]
+size = Vector3(9.76904, 6.59009, 7.91504)
+
+[node name="StartArea" type="Node3D"]
+
+[node name="LevelStartPos" type="Node3D" parent="." node_paths=PackedStringArray("start_nodes") groups=["Level Positions"]]
+script = ExtResource("1_vaka2")
+start_nodes = [NodePath("0")]
+
+[node name="0" type="Marker3D" parent="LevelStartPos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67986, 0)
+gizmo_extents = 3.0
+
+[node name="MainCamera" type="Camera3D" parent="." groups=["PlayerCamera"]]
+transform = Transform3D(1, 0, 0, 0, -0.947768, 0.318959, 0, -0.318959, -0.947768, -0.0530434, 2.23072, 1.90115)
+script = ExtResource("2_72uea")
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_pleka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0530434, 1.04122, -0.945046)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.946409, 0.0651543, -0.316331, 0.171734, 0.72798, 0.663741, 0.273528, -0.682495, 0.677778, -1.02082, 8.10316, 2.70058)
+
+[node name="Start Area" parent="." instance=ExtResource("4_72uea")]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Start Area"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Start Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0417786, 3.84528, 11.8097)
+shape = SubResource("BoxShape3D_pt7rl")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Start Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0417786, 3.84528, -9.12163)
+shape = SubResource("BoxShape3D_pt7rl")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Start Area/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.5419, 3.84528, 1.58869)
+shape = SubResource("BoxShape3D_pt7rl")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Start Area/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.0818, 3.84528, 5.39368)
+shape = SubResource("BoxShape3D_awd6t")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Start Area/StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.60662, 3.84528, -7.33259)
+shape = SubResource("BoxShape3D_awd6t")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Start Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.49877, 0)
+shape = SubResource("BoxShape3D_72uea")
+
+[node name="LoadingAreaEast" type="Area3D" parent="Start Area"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.259, 0.24334, -0.89362)
+collision_mask = 64
+script = ExtResource("5_awd6t")
+target_level = "VillageArea"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Start Area/LoadingAreaEast"]
+shape = SubResource("BoxShape3D_sdpi2")

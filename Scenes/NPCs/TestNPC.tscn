@@ -27,3 +27,4 @@ sprite_frames = SubResource("SpriteFrames_ykm2c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_yga74")
+debug_color = Color(0, 0.6, 0.701961, 0.701961)

@@ -1218,6 +1218,7 @@ script = ExtResource("1_rpqav")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_kyqiw")
+debug_color = Color(0, 0.6, 0.701961, 0.701961)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0)
@@ -1228,7 +1229,7 @@ animation = &"walk_W"
 autoplay = "idle_S"
 
 [node name="CameraRelativePosition" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.86673, 5.29766)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.46384, 13.3829)
 
 [node name="Vertical" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, 0.7)
@@ -1241,6 +1242,7 @@ collision_mask = 128
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea"]
 shape = SubResource("BoxShape3D_kyqiw")
+debug_color = Color(0, 0.6, 0.701961, 0.701961)
 
 [connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]
