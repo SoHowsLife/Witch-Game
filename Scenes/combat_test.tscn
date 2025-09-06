@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp4ahcpv4c14s"]
+[gd_scene load_steps=4 format=3 uid="uid://i8vpju4h1w5"]
 
 [ext_resource type="Script" uid="uid://ced44b2af32qx" path="res://Scripts/combat/base_combat_scene.gd" id="1_x0xd4"]
 [ext_resource type="Script" uid="uid://ci3p022cm10ob" path="res://Scripts/combat/turns/turn_scheduler.gd" id="2_opkgf"]
-[ext_resource type="PackedScene" uid="uid://fh34kjippoc1" path="res://Scenes/Combat/base_combatant.tscn" id="3_opkgf"]
+[ext_resource type="PackedScene" path="res://Scenes/Combat/base_combatant.tscn" id="3_opkgf"]
 
 [node name="CombatTest" type="Node3D" node_paths=PackedStringArray("ally_combatants")]
 script = ExtResource("1_x0xd4")
