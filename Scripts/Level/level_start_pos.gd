@@ -1,4 +1,3 @@
-@tool
 class_name LevelStartPos
 extends Node3D
 
