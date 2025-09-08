@@ -102,12 +102,12 @@ level_id = 2
 transform = Transform3D(1, -4.54747e-13, 8.74746e-15, 4.54747e-13, 1, 0, -5.46342e-15, 0, 1, -9.09495e-13, 1.90436, 0)
 shape = SubResource("BoxShape3D_h3faw")
 
-[node name="LoadingAreaForest2" type="Area3D" parent="Forest Area 2"]
+[node name="LoadingAreaTreehouse" type="Area3D" parent="Forest Area 2"]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -4.37114e-08, -36.11, 0, 12.4084)
 collision_mask = 64
 script = ExtResource("5_wisgy")
 target_level = "TreehouseArea"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Forest Area 2/LoadingAreaForest2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forest Area 2/LoadingAreaTreehouse"]
 transform = Transform3D(1, -4.54747e-13, 8.74746e-15, 4.54747e-13, 1, 0, -5.46342e-15, 0, 1, -5.47182e-08, -0.235168, -0.887741)
 shape = SubResource("BoxShape3D_h3faw")

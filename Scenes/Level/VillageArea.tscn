@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://npwhafrqpk4r"]
+[gd_scene load_steps=24 format=3 uid="uid://npwhafrqpk4r"]
 
 [ext_resource type="Script" uid="uid://bgbgy4eb24rtm" path="res://Scripts/Level/level_start_pos.gd" id="1_hpbu3"]
 [ext_resource type="Script" uid="uid://bhuu5a0ihcfbi" path="res://Scripts/player_camera.gd" id="2_00m3m"]
@@ -26,6 +26,9 @@ size = Vector3(4.82007, 7.70142, 13.1226)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_32wo7"]
 size = Vector3(56.1354, 26.1111, 15.3752)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7h0pr"]
+size = Vector3(25.5957, 22.5664, 31.506)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iavrp"]
 size = Vector3(92.3577, 9.55399, 20.8629)
@@ -115,8 +118,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.893792, 3.00317, -41.9729)
 shape = SubResource("BoxShape3D_32wo7")
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9991, 3.00317, -27.4659)
-shape = SubResource("BoxShape3D_32wo7")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9991, 3.00317, -28.2316)
+shape = SubResource("BoxShape3D_7h0pr")
 
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.9577, 3.00317, -30.7193)

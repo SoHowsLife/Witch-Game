@@ -13,4 +13,3 @@ func _process(delta: float) -> void:
 		if start_nodes.size() <= 20:
 			for marker in start_nodes:
 				marker.name = str(marker.get_index())
-	pass
