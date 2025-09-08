@@ -141,20 +141,22 @@ level_id = 1
 transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_i0qv4")
 
-[node name="LoadingAreaVillage2" type="Area3D" parent="Forest Area 1"]
+[node name="LoadingAreaBee" type="Area3D" parent="Forest Area 1"]
 transform = Transform3D(-5.90104e-08, 0, 1.35, 0, 1.35, 0, -1.35, 0, -5.90104e-08, 34.5901, 1.32851, 7.48491)
 collision_mask = 64
 script = ExtResource("5_bun16")
+target_level = "BeeWalkway"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Forest Area 1/LoadingAreaVillage2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forest Area 1/LoadingAreaBee"]
 transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_i0qv4")
 
-[node name="LoadingAreaVillage3" type="Area3D" parent="Forest Area 1"]
+[node name="LoadingAreaForest" type="Area3D" parent="Forest Area 1"]
 transform = Transform3D(-5.90104e-08, 0, 1.35, 0, 1.35, 0, -1.35, 0, -5.90104e-08, 1.55691, 1.32851, 28.1789)
 collision_mask = 64
 script = ExtResource("5_bun16")
+target_level = "ForestArea2"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Forest Area 1/LoadingAreaVillage3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forest Area 1/LoadingAreaForest"]
 transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, -0.236633, 0, 0)
 shape = SubResource("BoxShape3D_bun16")
