@@ -16,7 +16,6 @@ func _ready() -> void:
 	if camera:
 		camera.target = camera_target
 		camera.rotation.x = -atan2(camera_target.position.y, camera_target.position.z)
-		print(camera.rotation)
 		#sprite.rotation.x = camera.rotation.x
 
 func _physics_process(delta: float) -> void:

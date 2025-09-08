@@ -30,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5789, 0.629483, -11.3638)
 gizmo_extents = 3.0
 
 [node name="1" type="Marker3D" parent="LevelStartPos"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3819, 0.629483, 7.12337)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9438, 0.629483, 7.12337)
 gizmo_extents = 3.0
 
 [node name="2" type="Marker3D" parent="LevelStartPos"]
