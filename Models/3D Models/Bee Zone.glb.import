@@ -34,19 +34,11 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
-"Ground": {
+"Hive": {
 "use_external/enabled": true,
-"use_external/path": "uid://coh1k8kgaiyg3"
-},
-"Tree": {
-"use_external/enabled": true,
-"use_external/path": "uid://bqavph8mppk2s"
-},
-"Wooden Beam": {
-"use_external/enabled": true,
-"use_external/path": "uid://eyqki30eexmh"
+"use_external/path": "res://Models/3D Models/Materials/Hive.tres"
 }
 }
 }
 gltf/naming_version=1
-gltf/embedded_image_handling=0
+gltf/embedded_image_handling=1

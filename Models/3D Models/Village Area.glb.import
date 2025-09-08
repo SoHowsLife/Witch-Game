@@ -36,7 +36,11 @@ _subresources={
 "materials": {
 "Ground": {
 "use_external/enabled": true,
-"use_external/path": "res://Models/3D Models/Materials/Ground.tres"
+"use_external/path": "uid://dwv741np0pd4n"
+},
+"Leaves A": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/3D Models/Materials/Leaves A.tres"
 },
 "Roof": {
 "use_external/enabled": true,
@@ -46,13 +50,13 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://Models/3D Models/Materials/Stone.tres"
 },
-"Tree": {
+"Tree Wood": {
 "use_external/enabled": true,
-"use_external/path": "res://Models/3D Models/Materials/Tree.tres"
+"use_external/path": "res://Models/3D Models/Materials/Tree Wood.tres"
 },
 "Village Wall": {
 "use_external/enabled": true,
-"use_external/path": "res://Models/3D Models/Materials/Village Wall.tres"
+"use_external/path": "uid://cnxu3mwsy4nki"
 },
 "Window": {
 "use_external/enabled": true,

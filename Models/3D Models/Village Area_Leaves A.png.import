@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chti5yqrjeslq"
-path.s3tc="res://.godot/imported/Village Area_Wood Beam.png-0bea13339c732def1e6ffbdea7afa76e.s3tc.ctex"
+uid="uid://nfqectrxfto"
+path.s3tc="res://.godot/imported/Village Area_Leaves A.png-d0f84e69112d638b63d54c500b87e9b1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "5a381f41362f95815f609ac7aada794a"
+"md5": "2edd7b17ef3938a1df09c105bed596f1"
 }
 
 [deps]
 
-source_file="res://Models/3D Models/Village Area_Wood Beam.png"
-dest_files=["res://.godot/imported/Village Area_Wood Beam.png-0bea13339c732def1e6ffbdea7afa76e.s3tc.ctex"]
+source_file="res://Models/3D Models/Village Area_Leaves A.png"
+dest_files=["res://.godot/imported/Village Area_Leaves A.png-d0f84e69112d638b63d54c500b87e9b1.s3tc.ctex"]
 
 [params]
 

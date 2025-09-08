@@ -36,19 +36,23 @@ _subresources={
 "materials": {
 "Ground": {
 "use_external/enabled": true,
-"use_external/path": "uid://coh1k8kgaiyg3"
+"use_external/path": "uid://dwv741np0pd4n"
+},
+"Leaves A": {
+"use_external/enabled": true,
+"use_external/path": "uid://box2fp8jwl32o"
 },
 "Roof": {
 "use_external/enabled": true,
-"use_external/path": "uid://bxrrgr31jwdlc"
+"use_external/path": "uid://cc8mmnujy0cl8"
 },
 "Stone": {
 "use_external/enabled": true,
 "use_external/path": "uid://dx25v1fydvqmf"
 },
-"Tree": {
+"Tree Wood": {
 "use_external/enabled": true,
-"use_external/path": "uid://bqavph8mppk2s"
+"use_external/path": "uid://dwv741np0pd4n"
 },
 "Village Wall": {
 "use_external/enabled": true,

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chti5yqrjeslq"
-path.s3tc="res://.godot/imported/Village Area_Wood Beam.png-0bea13339c732def1e6ffbdea7afa76e.s3tc.ctex"
+uid="uid://dmj2xiuqhjlkk"
+path.s3tc="res://.godot/imported/Bee Zone_Hive.png-179d461722adcae4d26609c307d5b805.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "5a381f41362f95815f609ac7aada794a"
+"md5": "dbe0714b5aae184d98270f7784dba127"
 }
 
 [deps]
 
-source_file="res://Models/3D Models/Village Area_Wood Beam.png"
-dest_files=["res://.godot/imported/Village Area_Wood Beam.png-0bea13339c732def1e6ffbdea7afa76e.s3tc.ctex"]
+source_file="res://Models/3D Models/Bee Zone_Hive.png"
+dest_files=["res://.godot/imported/Bee Zone_Hive.png-179d461722adcae4d26609c307d5b805.s3tc.ctex"]
 
 [params]
 
