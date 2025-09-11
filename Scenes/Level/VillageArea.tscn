@@ -1,10 +1,12 @@
-[gd_scene load_steps=23 format=3 uid="uid://npwhafrqpk4r"]
+[gd_scene load_steps=26 format=3 uid="uid://npwhafrqpk4r"]
 
 [ext_resource type="Script" uid="uid://bgbgy4eb24rtm" path="res://Scripts/Level/level_start_pos.gd" id="1_hpbu3"]
 [ext_resource type="Script" uid="uid://bhuu5a0ihcfbi" path="res://Scripts/player_camera.gd" id="2_00m3m"]
 [ext_resource type="PackedScene" uid="uid://c7iut5oc6i8an" path="res://Scenes/Player.tscn" id="3_iavrp"]
 [ext_resource type="Script" uid="uid://e2nnrd448mgb" path="res://Scripts/Level/level_transition.gd" id="4_gpo16"]
 [ext_resource type="PackedScene" uid="uid://cx0h1mdvi1ea2" path="res://Models/3D Models/Village Area.glb" id="4_ujtmb"]
+[ext_resource type="PackedScene" uid="uid://c06nfq0qp0lsh" path="res://Models/3D Models/Start Area.glb" id="5_00m3m"]
+[ext_resource type="PackedScene" uid="uid://dww4oek3iidhq" path="res://Models/3D Models/Forest Area 1.glb" id="7_iavrp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hpbu3"]
 size = Vector3(118.104, 1, 140.509)
@@ -26,6 +28,9 @@ size = Vector3(4.82007, 7.70142, 13.1226)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_32wo7"]
 size = Vector3(56.1354, 26.1111, 15.3752)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7h0pr"]
+size = Vector3(25.5957, 22.5664, 31.506)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iavrp"]
 size = Vector3(92.3577, 9.55399, 20.8629)
@@ -56,7 +61,7 @@ height = 7.1123
 radius = 1.09961
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dxctl"]
-size = Vector3(10.9318, 2.77393, 21.4991)
+size = Vector3(10.9318, 7.01563, 16.8593)
 
 [node name="VillageArea" type="Node3D"]
 
@@ -65,7 +70,7 @@ script = ExtResource("1_hpbu3")
 start_nodes = [NodePath("0"), NodePath("1")]
 
 [node name="0" type="Marker3D" parent="LevelStartPos"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3158, 0.629483, -4.56769)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.2105, 0.629483, -4.56769)
 gizmo_extents = 3.0
 
 [node name="1" type="Marker3D" parent="LevelStartPos"]
@@ -114,8 +119,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.893792, 3.00317, -41.9729)
 shape = SubResource("BoxShape3D_32wo7")
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9991, 3.00317, -27.4659)
-shape = SubResource("BoxShape3D_32wo7")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.9991, 3.00317, -28.2316)
+shape = SubResource("BoxShape3D_7h0pr")
 
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="Village Area/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.9577, 3.00317, -30.7193)
@@ -160,20 +165,26 @@ shape = SubResource("CylinderShape3D_hpbu3")
 debug_color = Color(0, 0.6, 0.701961, 0.701961)
 
 [node name="LoadingAreaWest" type="Area3D" parent="Village Area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.6492, 1.10553, 0)
+transform = Transform3D(1.205, 0, 0, 0, 1.205, 0, 0, 0, 1.205, -40.6132, 1.10553, -4.48686)
 collision_mask = 64
 script = ExtResource("4_gpo16")
 target_level = "StartArea"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Village Area/LoadingAreaWest"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512638, 0.886963, 0)
 shape = SubResource("BoxShape3D_dxctl")
 
 [node name="LoadingAreaEast" type="Area3D" parent="Village Area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.8962, 1.10553, -17.0902)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3324, 1.10553, -17.0902)
 collision_mask = 64
 script = ExtResource("4_gpo16")
+target_level = "ForestArea1"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Village Area/LoadingAreaEast"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73243, 0.886963, -1.34715)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.00482)
 shape = SubResource("BoxShape3D_dxctl")
+
+[node name="Start Area" parent="." instance=ExtResource("5_00m3m")]
+transform = Transform3D(1.47, 0, 0, 0, 1.47, 0, 0, 0, 1.47, -68.2397, 0.722294, -0.638704)
+
+[node name="Forest Area 1" parent="." instance=ExtResource("7_iavrp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.5774, 0.722294, -5.79519)

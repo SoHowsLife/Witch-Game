@@ -11,7 +11,7 @@ func level_transition(level: String, id: int):
 	await get_tree().create_timer(0.1).timeout
 	var player : Player = get_tree().get_first_node_in_group("Player")
 	var level_pos : LevelStartPos = get_tree().get_first_node_in_group("Level Positions")
-	if id > level_pos.start_nodes.size():
+	if id >= level_pos.start_nodes.size():
 		id = 0
 	if level_pos.start_nodes[id] != null:
 		player.position = level_pos.start_nodes[id].position

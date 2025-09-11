@@ -16,7 +16,6 @@ func _ready() -> void:
 	if camera:
 		camera.target = camera_target
 		camera.rotation.x = -atan2(camera_target.position.y, camera_target.position.z)
-		print(camera.rotation)
 		#sprite.rotation.x = camera.rotation.x
 
 func _physics_process(delta: float) -> void:
@@ -26,6 +25,8 @@ func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		if self.global_position.y < -100:
+			self.global_position.y = 10
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if input_dir != Vector2.ZERO:
