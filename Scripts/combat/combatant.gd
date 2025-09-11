@@ -23,7 +23,8 @@ var _remaining_turn_time:
 		return _scheduler_references.front().turn_time
 var _turn_share: int = 0
 
-@onready var stats: StatsComponent = $"StatsComponent"
+@onready var stats = $"StatsComponent" as StatsComponent
+@onready var effects = $"EffectsComponent" as EffectsComponent
 
 func _ready() -> void:
 	if combatant_template:

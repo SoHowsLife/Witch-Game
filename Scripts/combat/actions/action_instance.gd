@@ -1,5 +1,5 @@
 class_name ActionInstance
-extends Node
+extends RefCounted
 
 enum ActionType {
 	ATTACK,
@@ -14,3 +14,5 @@ enum ActionTargetType {
 	OPP_SIDE_AOE,
 	BOTH_SIDE_AOE,
 }
+
+var caster

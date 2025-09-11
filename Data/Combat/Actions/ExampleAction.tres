@@ -1,11 +1,14 @@
-[gd_resource type="Resource" script_class="ActionSpreadData" load_steps=3 format=3 uid="uid://bieh7xm4adgdt"]
+[gd_resource type="Resource" script_class="ActionData" load_steps=2 format=3 uid="uid://cfx0rbxvset53"]
 
 [ext_resource type="Script" uid="uid://bucjs2sidyhkd" path="res://Scripts/combat/actions/action_data.gd" id="1_yqfvh"]
-[ext_resource type="Script" uid="uid://doocwh8b6rd11" path="res://Scripts/combat/actions/action_spread_data.gd" id="2_n6svi"]
 
 [resource]
-script = ExtResource("2_n6svi")
-possible_attacks = Array[ExtResource("1_yqfvh")]([])
-possible_support = Array[ExtResource("1_yqfvh")]([])
-possible_other = Array[ExtResource("1_yqfvh")]([])
-metadata/_custom_type_script = "uid://doocwh8b6rd11"
+script = ExtResource("1_yqfvh")
+action_id = 0
+name = "Example Action"
+description = "Does a thing."
+category = 0
+animation = false
+target_type = 0
+effects = []
+metadata/_custom_type_script = "uid://bucjs2sidyhkd"

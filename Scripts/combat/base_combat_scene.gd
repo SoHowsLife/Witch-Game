@@ -49,6 +49,10 @@ func give_turn(combatant: Combatant):
 	pass
 
 
+func process_action(action: ActionInstance):
+	pass
+
+
 func _on_turn_finish(combatant: Combatant):
 	combatant.turn_finished.disconnect(_on_turn_finish)
 	combatant.readd_ended_turn()
