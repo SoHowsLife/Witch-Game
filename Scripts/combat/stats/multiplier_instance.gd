@@ -1,5 +1,5 @@
 class_name MultiplierInstance
-extends Node
+extends RefCounted
 
 var multiplier_name: String = "buh"
 var source_name: String = "guh"

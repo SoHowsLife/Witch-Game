@@ -18,14 +18,16 @@ func advance_scheduler() -> Combatant:
 	return _schedule.front().attached_combatant
 
 
-func populate_scheduler():
+func populate_scheduler(log_debug: bool):
 	var new_tspd = _get_tspd()
+	_total_speed = new_tspd
 	for combatant in _attached_combatants:
-		combatant.generate_turn_population(new_tspd, MAX_FORESEEABLE_TURNS)
+		combatant.generate_turn_population(new_tspd, MAX_FORESEEABLE_TURNS, log_debug)
 
 
 func validate_scheduler():
 	var new_tspd = _get_tspd()
+	_total_speed = new_tspd
 	for combatant in _attached_combatants:
 		combatant.validate_turn_scheduler(new_tspd, MAX_FORESEEABLE_TURNS)
 
@@ -48,6 +50,26 @@ func detach_from_scheduler(combatant: Combatant):
 
 func sort_scheduler_queue():
 	_schedule.sort_custom(TurnSchedulerTask.task_compare)
+
+
+func print_attached_combatants():
+	if _attached_combatants.size() == 0:
+		push_warning("No combatants attached to scheduler. Error?")
+		return
+	var print_msg: Array[String] = []
+	for combatant in _attached_combatants:
+		print_msg.append(combatant.entity_name)
+	print("ATTACHED_COMBATANTS: ", print_msg)
+
+
+func print_scheduler():
+	if _schedule.size() == 0:
+		push_warning("No combatants attached to scheduler. Error?")
+		return
+	var print_msg: Array[String] = []
+	for turn in _schedule:
+		print_msg.append(turn.get_print())
+	print("TURN_SCHEDULE: ", print_msg)
 
 
 func _on_combatant_speed_changed(_combatant: Combatant, _speed: float):
@@ -73,7 +95,7 @@ func _on_request_remove_turns(removed_turns: Array[TurnSchedulerTask]):
 
 
 func _get_tspd() -> int:
-	var total := 0
+	var total: float = 0
 	for combatant in _attached_combatants:
-		total += combatant.get_speed()
+		total += combatant.speed
 	return total

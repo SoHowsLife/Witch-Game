@@ -14,6 +14,7 @@ extends Resource
 
 var _elemental_spread: Array[float]
 
+
 func _init():
 	_elemental_spread = [
 		fire,
@@ -25,5 +26,9 @@ func _init():
 		poison,
 	]
 
+
 func get_element_multiplier(element: CombatRules.Elements):
-	return _elemental_spread[element]
+	if element == CombatRules.Elements.NONELEMENTAL:
+		return 0.0
+	else:
+		return _elemental_spread[element]

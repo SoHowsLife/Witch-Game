@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="StatSpreadData" load_steps=2 format=3 uid="uid://h1p1eofl6i5c"]
+
+[ext_resource type="Script" uid="uid://b01dl5ceetcev" path="res://Scripts/combat/stats/stat_spread_data.gd" id="1_slfsr"]
+
+[resource]
+script = ExtResource("1_slfsr")
+base_HP = 100.0
+base_ATK = 10.0
+base_DEF = 10.0
+base_SPD = 10.0
+base_HP_scaling_factor = 2.5
+base_ATK_scaling_factor = 2.0
+base_DEF_scaling_factor = 2.0
+added_crit_chance = 0.0
+added_crit_multiplier = 0.0
+metadata/_custom_type_script = "uid://b01dl5ceetcev"

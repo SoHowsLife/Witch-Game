@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfn5o5bq7o6hu"]
+
+[ext_resource type="Script" uid="uid://b4hk8p1boedon" path="res://Scripts/combat/combatant.gd" id="1_umgg8"]
+[ext_resource type="Script" uid="uid://ppqhb3fh5wik" path="res://Scripts/combat/stats/stats_component.gd" id="2_5xsma"]
+[ext_resource type="Script" uid="uid://l0nmeownt3gn" path="res://Scripts/combat/actions/action_component.gd" id="3_7h2wp"]
+[ext_resource type="Script" uid="uid://duehbakk5kt20" path="res://Scripts/combat/effects/effects_component.gd" id="4_clf3x"]
+[ext_resource type="Texture2D" uid="uid://3vfwys1ofxh" path="res://Sprites/icon.svg" id="5_hwpal"]
+
+[node name="BaseCombatant" type="Node3D"]
+script = ExtResource("1_umgg8")
+metadata/_custom_type_script = "uid://b4hk8p1boedon"
+
+[node name="StatsComponent" type="Node" parent="."]
+script = ExtResource("2_5xsma")
+metadata/_custom_type_script = "uid://ppqhb3fh5wik"
+
+[node name="ActionComponent" type="Node" parent="."]
+script = ExtResource("3_7h2wp")
+metadata/_custom_type_script = "uid://l0nmeownt3gn"
+
+[node name="EffectsComponent" type="Node" parent="."]
+script = ExtResource("4_clf3x")
+metadata/_custom_type_script = "uid://duehbakk5kt20"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("5_hwpal")

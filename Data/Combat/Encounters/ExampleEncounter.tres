@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EncounterData" load_steps=3 format=3 uid="uid://6tb1rsisqskn"]
+
+[ext_resource type="Script" uid="uid://d3aow5apoqxc0" path="res://Scripts/combat/encounter/encounter_data.gd" id="1_3anpb"]
+[ext_resource type="Script" uid="uid://ixogu2xhw6s4" path="res://Scripts/combat/encounter/encounter_wave_data.gd" id="2_f32lw"]
+
+[resource]
+script = ExtResource("1_3anpb")
+waves = Array[ExtResource("2_f32lw")]([null])
+background = false
+music = false
+metadata/_custom_type_script = "uid://d3aow5apoqxc0"

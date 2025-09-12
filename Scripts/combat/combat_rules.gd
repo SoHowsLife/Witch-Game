@@ -4,6 +4,7 @@ const DEFAULT_LEVEL_SCALE_FACTOR: float = 2
 const DEFAULT_MULT_EVERY_X: float = 10
 
 enum Elements {
+	NONELEMENTAL = -1,
 	FIRE,
 	WATER,
 	AIR,
@@ -55,4 +56,4 @@ func _calculate_incoming_damage_modifier(defender: StatsComponent, is_crit: bool
 
 func _calculate_elemental_modifier(element: Elements, defender: StatsComponent,
 		penetration: float) -> float:
-	return defender.get_resist_multiplier(element) + penetration
+	return defender.get_resist_multiplier(element) + penetration + 1.0

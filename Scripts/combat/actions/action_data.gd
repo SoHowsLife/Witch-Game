@@ -16,3 +16,5 @@ extends Resource
 @export var animation: bool
 @export var target_type: ActionInstance.ActionTargetType
 @export var effects: Array[Variant]
+@export var initial_cooldown: int = 0
+@export var cooldown_after_use: int = 0
