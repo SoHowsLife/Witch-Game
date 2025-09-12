@@ -102,6 +102,7 @@ func init_stats(stat_spread: StatSpreadData):
 	_base_ATK_scaling_factor = stat_spread.base_ATK_scaling_factor
 	_base_DEF_scaling_factor = stat_spread.base_DEF_scaling_factor
 	apply_elemental_resist_spread(stat_spread.base_resistances)
+	force_update_stats()
 
 
 func get_resist_multiplier(element: CombatRules.Elements) -> float:
