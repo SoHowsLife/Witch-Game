@@ -1,6 +1,11 @@
 class_name Combatant
 extends Node3D
 
+enum CombatSide {
+	PLAYER_SIDE,
+	ENEMY_SIDE
+}
+
 const SPEED_CONSTANT: float = 100
 
 signal speed_changed(combatant: Combatant, new_speed: float)
@@ -16,6 +21,20 @@ signal turns_removed(task: Array[TurnSchedulerTask])
 @export var description: String = "Buh."
 
 
+var combatant_side: CombatSide
+
+var max_hp: float:
+	get:
+		return stats.MAX_HP
+var hp: float:
+	get:
+		return stats.current_HP
+var atk: float:
+	get:
+		return stats.effective_ATK
+var def: float:
+	get:
+		return stats.effective_DEF
 var speed: float:
 	get:
 		return stats.effective_SPD
@@ -29,12 +48,15 @@ var _turn_share: int = 0
 
 @onready var stats = $"StatsComponent" as StatsComponent
 @onready var effects = $"EffectsComponent" as EffectsComponent
+@onready var actions = $"ActionComponent" as ActionComponent
 @onready var _debug_namesign = str(entity_name, ": ")
 
+
 func _ready() -> void:
+	stats.speed_changed.connect(_on_stats_speed_changed)
+	actions.actor = self
 	if combatant_template:
 		init_stats(combatant_template)
-	stats.speed_changed.connect(_on_stats_speed_changed)
 	pass
 
 

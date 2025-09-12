@@ -3,15 +3,29 @@
 [ext_resource type="PackedScene" uid="uid://3hvll6rqj0x" path="res://Scenes/base_combat_scene.tscn" id="1_dkgtt"]
 [ext_resource type="PackedScene" uid="uid://dfn5o5bq7o6hu" path="res://Scenes/Combat/base_combatant.tscn" id="2_80eqr"]
 [ext_resource type="Resource" uid="uid://8shbf2iq5emc" path="res://Data/Combat/ExampleCombatant.tres" id="3_e10qk"]
-[ext_resource type="Script" uid="uid://c1jyp57kx2l4u" path="res://Scripts/combat/combatant_data.gd" id="4_1ivhh"]
 [ext_resource type="Script" uid="uid://b01dl5ceetcev" path="res://Scripts/combat/stats/stat_spread_data.gd" id="5_xmbkp"]
+
+[sub_resource type="GDScript" id="GDScript_e10qk"]
+script/source = "class_name CombatantData
+extends Resource
+
+@export_group(\"Frontend\")
+@export var combatant_name: String = \"Glorp\"
+@export var description: String = \"Guh!\"
+@export var combat_sprite: Texture2D
+@export var ui_sprite: Texture2D
+@export_group(\"Backend\")
+@export var stat_spread: StatSpreadData
+@export var action_spread: ActionSpreadData
+@export var default_agent: ActionAgent
+"
 
 [sub_resource type="Resource" id="Resource_yrnea"]
 script = ExtResource("5_xmbkp")
 base_HP = 100.0
 base_ATK = 10.0
 base_DEF = 10.0
-base_SPD = 50.0
+base_SPD = 40.0
 base_HP_scaling_factor = 2.5
 base_ATK_scaling_factor = 2.0
 base_DEF_scaling_factor = 2.0
@@ -20,14 +34,15 @@ added_crit_multiplier = 0.0
 metadata/_custom_type_script = "uid://b01dl5ceetcev"
 
 [sub_resource type="Resource" id="Resource_ktrmf"]
-script = ExtResource("4_1ivhh")
-combatant_name = "Glorp"
-description = "Guh!"
+script = SubResource("GDScript_e10qk")
+combatant_name = null
+description = null
 stat_spread = SubResource("Resource_yrnea")
 metadata/_custom_type_script = "uid://c1jyp57kx2l4u"
 
-[node name="BaseCombatScene" node_paths=PackedStringArray("enemy_combatants") instance=ExtResource("1_dkgtt")]
+[node name="BaseCombatScene" node_paths=PackedStringArray("ally_combatants", "enemy_combatants") instance=ExtResource("1_dkgtt")]
 log_debug = true
+ally_combatants = [NodePath("BaseCombatant")]
 enemy_combatants = [NodePath("BaseCombatant2"), NodePath("BaseCombatant3")]
 
 [node name="BaseCombatant" parent="." index="4" instance=ExtResource("2_80eqr")]
@@ -39,5 +54,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37362, 0, -2.2597)
 entity_name = "Test2"
 
 [node name="BaseCombatant3" parent="." index="6" instance=ExtResource("2_80eqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70258, 0, 0)
 combatant_template = SubResource("Resource_ktrmf")
 entity_name = "WHAT"

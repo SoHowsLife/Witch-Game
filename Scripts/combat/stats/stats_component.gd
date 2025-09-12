@@ -93,7 +93,12 @@ func _ready():
 	current_HP = MAX_HP
 
 
-func init_stats(stat_spread: StatSpreadData):
+func update_level(value: int):
+	_level = clampi(value, 1, INF)
+
+
+func init_stats(stat_spread: StatSpreadData, level: int = 1):
+	update_level(level)
 	_base_HP = stat_spread.base_HP
 	_base_ATK = stat_spread.base_ATK
 	_base_DEF = stat_spread.base_DEF
@@ -102,6 +107,7 @@ func init_stats(stat_spread: StatSpreadData):
 	_base_ATK_scaling_factor = stat_spread.base_ATK_scaling_factor
 	_base_DEF_scaling_factor = stat_spread.base_DEF_scaling_factor
 	apply_elemental_resist_spread(stat_spread.base_resistances)
+	current_HP = MAX_HP
 	force_update_stats()
 
 

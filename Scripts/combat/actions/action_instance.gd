@@ -15,4 +15,5 @@ enum ActionTargetType {
 	BOTH_SIDE_AOE,
 }
 
-var caster
+var actor: Combatant
+var receivers: Array[Combatant]

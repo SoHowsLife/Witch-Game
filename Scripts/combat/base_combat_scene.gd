@@ -1,7 +1,6 @@
 class_name CombatStateMachine
 extends Node3D
 
-
 enum CombatState {
 	SCHEDULER_IDLING,
 	AWAITING_TURN_FINISH,
@@ -27,8 +26,10 @@ func _ready() -> void:
 func init_combat():
 	for ally in ally_combatants:
 		_scheduler.attach_to_scheduler(ally)
+		ally.combatant_side = Combatant.CombatSide.PLAYER_SIDE
 	for enemy in enemy_combatants:
 		_scheduler.attach_to_scheduler(enemy)
+		enemy.combatant_side = Combatant.CombatSide.ENEMY_SIDE
 	_scheduler.populate_scheduler(log_debug)
 	if log_debug:
 		_scheduler.print_attached_combatants()
