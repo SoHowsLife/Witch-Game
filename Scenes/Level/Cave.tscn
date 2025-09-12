@@ -19,7 +19,7 @@ script = ExtResource("1_vgck3")
 start_nodes = [NodePath("0")]
 
 [node name="0" type="Marker3D" parent="LevelStartPos"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39803, 1.67986, 1.68135)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.61591, 5.58096)
 gizmo_extents = 3.0
 
 [node name="MainCamera" type="Camera3D" parent="." groups=["PlayerCamera"]]
