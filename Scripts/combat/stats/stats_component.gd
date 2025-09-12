@@ -7,11 +7,11 @@ signal hp_at_zero
 
 var _level: int = 0
 var _base_HP: float = 100
-var _base_HP_scaling_factor: float = 2.5
+var _base_HP_scaling_factor: float = 2
 var _base_ATK: float = 10
 var _base_ATK_scaling_factor: float = 2
 var _base_DEF: float = 10
-var _base_DEF_scaling_factor: float = 1.5
+var _base_DEF_scaling_factor: float = 2
 var _base_SPD: float = 10
 var _base_SPD_scaling_factor: float = 1.2
 
