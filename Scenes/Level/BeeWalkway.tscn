@@ -31,7 +31,7 @@ size = Vector3(4.39893, 7.65259, 9.01807)
 
 [node name="LevelStartPos" type="Node3D" parent="." node_paths=PackedStringArray("start_nodes") groups=["Level Positions"]]
 script = ExtResource("1_doipw")
-start_nodes = [NodePath("0")]
+start_nodes = [NodePath("0"), NodePath("1"), NodePath("2"), NodePath("3")]
 
 [node name="0" type="Marker3D" parent="LevelStartPos"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4374, 1.68, 0)

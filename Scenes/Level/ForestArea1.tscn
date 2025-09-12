@@ -62,15 +62,15 @@ polygon = PackedVector2Array(-11.5812, -33.332, -40.5689, -33.332, -40.7076, 41.
 [node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="Forest Area 1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, 0)
 depth = 12.86
-polygon = PackedVector2Array(-43.1177, -42.4917, -42.608, -15.2718, -25.8886, -15.3738, -10.3927, -24.9568, 1.12736, -26.6899, 9.28314, -24.7529, 7.75393, -17.3108, 17.5409, -8.33942, 19.9876, -13.3348, 15.8078, -18.0244, 19.274, -24.549, 23.046, -24.9568, 29.4687, -19.1458, 25.4927, -10.8881, 31.2018, 4.91372, 40.9887, 4.81177, 40.6829, -42.6956)
+polygon = PackedVector2Array(-43.1177, -42.4917, -42.608, -15.2718, -26.0172, -15.8535, -10.8962, -25.9093, 1.5433, -26.8777, 10.6308, -25.1644, 8.02374, -17.8646, 17.1857, -9.52199, 18.6755, -12.7995, 14.6532, -18.0136, 19.1969, -25.5369, 23.7407, -25.3879, 31.0405, -18.833, 26.1243, -10.7883, 31.3672, 3.94678, 40.5292, 3.42536, 40.6829, -42.6956)
 
 [node name="CollisionPolygon3D3" type="CollisionPolygon3D" parent="Forest Area 1/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, 0)
 depth = 12.86
-polygon = PackedVector2Array(-42.2894, -7.67983, -42.1165, 35.6071, 42.4294, 35.1314, 42.1915, 11.587, 26.1385, 9.80335, 23.7603, 19.9108, 4.97233, 23.4781, 5.21015, 33.7045, -0.259765, 33.8234, 0.810433, 22.7647, -5.96751, 19.7919, -8.1079, 34.1801, -11.6752, 34.1801, -11.6752, 19.3162, -28.7985, 19.0784, -28.6942, -1.45583, -25.1981, -1.28102, -24.4114, -4.68975, -32.4525, -4.95196, -36.9975, -8.01108)
+polygon = PackedVector2Array(-42.2894, -7.67983, -42.1165, 35.6071, 42.4294, 35.1314, 42.1915, 11.587, 27.3216, 11.2611, 25.46, 22.1017, 5.52653, 23.301, 5.21015, 33.7045, -0.259765, 33.8234, -0.506993, 22.7051, -5.96751, 19.7919, -8.1079, 34.1801, -11.6752, 34.1801, -11.6752, 19.3162, -28.7985, 19.0784, -28.6942, -1.45583, -25.331, -1.8722, -25.331, -4.3303, -33.0777, -3.65991, -36.8021, -6.7884)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Forest Area 1/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07328, 1, -4.56755)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10799, 1, -4.26227)
 shape = SubResource("CylinderShape3D_db7w8")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest Area 1/StaticBody3D"]
@@ -78,7 +78,7 @@ transform = Transform3D(1.255, 0, 0, 0, 1.255, 0, 0, 0, 1.255, -6.88224, 1, -2.2
 shape = SubResource("CylinderShape3D_db7w8")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Forest Area 1/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58211, 1, -9.54589)
+transform = Transform3D(0.775, 0, 0, 0, 0.775, 0, 0, 0, 0.775, -1.58211, 1, -9.54589)
 shape = SubResource("CylinderShape3D_db7w8")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Forest Area 1/StaticBody3D"]
@@ -106,7 +106,7 @@ transform = Transform3D(1.16, 0, 0, 0, 1.16, 0, 0, 0, 1.16, 0.945369, 1, 14.0989
 shape = SubResource("CylinderShape3D_db7w8")
 
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="Forest Area 1/StaticBody3D"]
-transform = Transform3D(1.06, 0, 0, 0, 1.06, 0, 0, 0, 1.06, -24.9172, 1, 16.6794)
+transform = Transform3D(1.355, 0, 0, 0, 1.355, 0, 0, 0, 1.355, -24.9172, 1, 16.6794)
 shape = SubResource("CylinderShape3D_db7w8")
 
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="Forest Area 1/StaticBody3D"]
