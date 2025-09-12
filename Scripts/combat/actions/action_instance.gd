@@ -17,3 +17,4 @@ enum ActionTargetType {
 
 var actor: Combatant
 var receivers: Array[Combatant]
+var data: ActionData

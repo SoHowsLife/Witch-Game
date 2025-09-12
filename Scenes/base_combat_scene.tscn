@@ -7,6 +7,7 @@
 
 [node name="BaseCombatScene" type="Node3D"]
 script = ExtResource("1_gvf7i")
+log_debug = true
 metadata/_custom_type_script = "uid://ced44b2af32qx"
 
 [node name="Camera3D" type="Camera3D" parent="."]

@@ -6,6 +6,7 @@
 [sub_resource type="Resource" id="Resource_7jb3f"]
 script = ExtResource("1_7jb3f")
 level = 1
+force_agent_override = false
 agent_override = 0
 metadata/_custom_type_script = "uid://c56t5x6xkfbom"
 

@@ -62,7 +62,6 @@ func print_attached_combatants():
 	print("ATTACHED_COMBATANTS: ", print_msg)
 
 
-
 func print_scheduler():
 	if _schedule.size() == 0:
 		push_warning("No combatants attached to scheduler. Error?")

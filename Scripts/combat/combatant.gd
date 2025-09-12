@@ -49,24 +49,24 @@ var _turn_share: int = 0
 @onready var stats = $"StatsComponent" as StatsComponent
 @onready var effects = $"EffectsComponent" as EffectsComponent
 @onready var actions = $"ActionComponent" as ActionComponent
-@onready var _debug_namesign = str(entity_name, ": ")
+@onready var _debug_namesign = str(entity_name, " (", self, "): ")
 
 
 func _ready() -> void:
 	stats.speed_changed.connect(_on_stats_speed_changed)
-	actions.actor = self
 	if combatant_template:
-		init_stats(combatant_template)
+		init_combatant(combatant_template)
 	pass
 
 
-func init_stats(stats_spec: CombatantData):
-	stats.init_stats(stats_spec.stat_spread)
-	pass
+func init_combatant(spec: CombatantData):
+	stats.init_stats(spec.stat_spread)
+	actions.init_actions(spec.action_spread)
+	actions.init_agent(spec.default_agent)
 
-
-func generate_turn_population(total_speed: float, displayed_turns: int, log_debug: bool) -> bool:
+func generate_turn_population(total_speed: float, displayed_turns: int, log_debug = false) -> bool:
 	_scheduler_references = []
+	var print_times = []
 	_turn_share = ceili(speed / total_speed * displayed_turns)
 	if log_debug:
 		print(_debug_namesign, "Calculated turn share = ", _turn_share)
@@ -74,10 +74,12 @@ func generate_turn_population(total_speed: float, displayed_turns: int, log_debu
 		var task = TurnSchedulerTask.new()
 		task.attached_combatant = self
 		task.turn_time = (i + 1) * _base_turn_time
+		if log_debug:
+			print_times.push_back((i + 1) * _base_turn_time)
 		_scheduler_references.push_back(task)
 	turns_added.emit(_scheduler_references)
 	if log_debug:
-		print(_debug_namesign, "Made scheduler turns = ", _scheduler_references)
+		print(_debug_namesign, "Made scheduler turns = ", print_times)
 	return true
 
 
@@ -113,8 +115,16 @@ func readd_ended_turn():
 	_scheduler_references.push_back(_scheduler_references.pop_front())
 
 
-func receive_turn():
+func get_action(battlefield_info: BattlefieldInfo) -> ActionInstance:
+	return actions.ask_agent_input(battlefield_info, self)
+
+
+func tick_start_of_turn():
 	pass
+
+
+func tick_end_of_turn():
+	turn_finished.emit(self)
 
 
 ## Moves all of this combatant's turns by time proportional to BTT and [param multiplier].
