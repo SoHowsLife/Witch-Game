@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cnxu3mwsy4nki"]
+
+[ext_resource type="Texture2D" uid="uid://dxuv6bcvtchnh" path="res://Models/3D Models/Village Area_Village Wall.png" id="1_2nh4b"]
+
+[resource]
+resource_name = "Village Wall"
+cull_mode = 2
+albedo_texture = ExtResource("1_2nh4b")
+texture_filter = 2

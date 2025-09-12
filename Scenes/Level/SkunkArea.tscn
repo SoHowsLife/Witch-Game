@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://vnp6wl43w1fg"]
+
+[ext_resource type="Script" uid="uid://bgbgy4eb24rtm" path="res://Scripts/Level/level_start_pos.gd" id="1_8x3al"]
+[ext_resource type="Script" uid="uid://bhuu5a0ihcfbi" path="res://Scripts/player_camera.gd" id="2_h2nei"]
+[ext_resource type="PackedScene" uid="uid://c7iut5oc6i8an" path="res://Scenes/Player.tscn" id="3_wswy5"]
+[ext_resource type="PackedScene" uid="uid://c48ramg25svef" path="res://Models/3D Models/Skunk Area.glb" id="4_crecl"]
+[ext_resource type="Script" uid="uid://e2nnrd448mgb" path="res://Scripts/Level/level_transition.gd" id="5_5inr0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8x3al"]
+size = Vector3(59.4902, 1, 57.7363)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2nei"]
+size = Vector3(11.8064, 9.29004, 1.7627)
+
+[node name="SkunkArea" type="Node3D"]
+
+[node name="LevelStartPos" type="Node3D" parent="." node_paths=PackedStringArray("start_nodes") groups=["Level Positions"]]
+script = ExtResource("1_8x3al")
+start_nodes = [NodePath("0"), NodePath("1")]
+
+[node name="0" type="Marker3D" parent="LevelStartPos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0592327, 1.18209, 8.26585)
+gizmo_extents = 3.0
+
+[node name="1" type="Marker3D" parent="LevelStartPos"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54813, 1.18209, 2.86122)
+gizmo_extents = 3.0
+
+[node name="MainCamera" type="Camera3D" parent="." groups=["PlayerCamera"]]
+transform = Transform3D(1, 0, 0, 0, -0.947769, 0.318959, 0, -0.318959, -0.947769, -0.0889631, 3.46779, 5.00148)
+script = ExtResource("2_h2nei")
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_wswy5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0530434, 1.04122, -0.945046)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.946409, 0.0651543, -0.316331, 0.171734, 0.72798, 0.663741, 0.273528, -0.682495, 0.677778, -1.02082, 8.10316, 2.70058)
+
+[node name="Skunk Area" parent="." instance=ExtResource("4_crecl")]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Skunk Area"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skunk Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_8x3al")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Skunk Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+depth = 10.625
+polygon = PackedVector2Array(-1.69284, 10.1392, -2.08697, 14.0805, -15.431, 13.8553, -15.4873, -16.9993, 13.9034, -15.9295, 14.1286, 0.229742, 6.69645, 0.173439, 6.86536, -3.99305, 3.76864, -5.34435, 5.67625, -12.2654, -4.28596, -12.922, -4.28282, -10.7495, -5.3526, -10.7495, -7.42801, -1.60344, -7.49215, 8.73164)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="Skunk Area/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(5.81426, 5.63156, 3.26723, 12.8422, 11.4823, 13.452, 13.8858, 5.99029)
+
+[node name="LoadingAreaLibrary" type="Area3D" parent="Skunk Area"]
+transform = Transform3D(-4.37114e-08, 0, 1, -8.74228e-08, -1, -3.82138e-15, 1, -8.74228e-08, 4.37114e-08, 13.8393, 0, 2.47666)
+collision_mask = 64
+script = ExtResource("5_5inr0")
+target_level = "LibraryArea"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skunk Area/LoadingAreaLibrary"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.15256e-07, -2.84217e-14, -2.71136)
+shape = SubResource("BoxShape3D_h2nei")
+debug_color = Color(1.63645e-06, 0.653397, 0.70868, 0.905882)
+
+[node name="LoadingAreaBee" type="Area3D" parent="Skunk Area"]
+transform = Transform3D(1, -8.74228e-08, 1.06581e-14, -8.74228e-08, -1, -3.82138e-15, 1.06581e-14, 3.82137e-15, -1, 1.39249, 0, 8.42747)
+collision_mask = 64
+script = ExtResource("5_5inr0")
+target_level = "BeeWalkway"
+level_id = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skunk Area/LoadingAreaBee"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.15256e-07, -2.84217e-14, -2.71136)
+shape = SubResource("BoxShape3D_h2nei")
+debug_color = Color(1.63645e-06, 0.653397, 0.70868, 0.905882)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Witch Game"
-run/main_scene="uid://c5w5e7ihaoy3r"
+run/main_scene="res://Models/3D Models/Village Test.fbx"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 
@@ -32,6 +32,7 @@ directories/dch_directory={
 "TestNPC": "res://Dialogue/TestNPC/TestNPC.dch"
 }
 directories/dtl_directory={
+"DebugNPC_msg": "res://Dialogue/DebugNPC/DebugNPC_msg.dtl",
 "Test": "res://Dialogue/Test.dtl",
 "TestNPC_msg": "res://Dialogue/TestNPC/TestNPC_msg.dtl",
 "error": "res://Dialogue/error.dtl",

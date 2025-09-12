@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dmj2xiuqhjlkk"
+path.s3tc="res://.godot/imported/Bee Zone_Hive.png-179d461722adcae4d26609c307d5b805.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "dbe0714b5aae184d98270f7784dba127"
+}
+
+[deps]
+
+source_file="res://Models/3D Models/Bee Zone_Hive.png"
+dest_files=["res://.godot/imported/Bee Zone_Hive.png-179d461722adcae4d26609c307d5b805.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

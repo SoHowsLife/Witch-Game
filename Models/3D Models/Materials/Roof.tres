@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cc8mmnujy0cl8"]
+
+[ext_resource type="Texture2D" uid="uid://dlrxmnydr06o3" path="res://Models/3D Models/Village Area_Roof.png" id="1_myj4e"]
+
+[resource]
+resource_name = "Roof"
+cull_mode = 2
+albedo_texture = ExtResource("1_myj4e")
+texture_filter = 2
