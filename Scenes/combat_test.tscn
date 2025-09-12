@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dfn5o5bq7o6hu" path="res://Scenes/Combat/base_combatant.tscn" id="3_opkgf"]
 
 [node name="CombatTest" type="Node3D" node_paths=PackedStringArray("ally_combatants")]
+transform = Transform3D(0.587192, 0, -0.809448, 0, 1, 0, 0.809448, 0, 0.587192, 0, 0, 0)
 script = ExtResource("1_x0xd4")
 ally_combatants = [NodePath("BaseCombatant")]
 metadata/_custom_type_script = "uid://ced44b2af32qx"
@@ -14,3 +15,6 @@ script = ExtResource("2_opkgf")
 metadata/_custom_type_script = "uid://ci3p022cm10ob"
 
 [node name="BaseCombatant" parent="." instance=ExtResource("3_opkgf")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60383, 0, 2.21089)

@@ -5,6 +5,8 @@ signal request_update
 
 const MAX_FORESEEABLE_TURNS: int = 10
 
+@export var print_debug: bool = false
+
 var _total_speed: float
 
 var _schedule: Array[TurnSchedulerTask]

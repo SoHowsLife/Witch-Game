@@ -9,7 +9,11 @@ signal turn_finished(combatant: Combatant)
 signal turns_added(task: Array[TurnSchedulerTask])
 signal turns_removed(task: Array[TurnSchedulerTask])
 
+@export_group("Meta")
 @export var combatant_template: CombatantData
+@export_group("Combat Info")
+@export var entity_name: String = "Guh"
+@export var description: String = "Buh."
 
 
 var speed: float:

@@ -1,12 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://3hvll6rqj0x"]
+[gd_scene load_steps=4 format=3 uid="uid://3hvll6rqj0x"]
 
 [ext_resource type="Script" uid="uid://ced44b2af32qx" path="res://Scripts/combat/base_combat_scene.gd" id="1_gvf7i"]
 [ext_resource type="Script" uid="uid://ci3p022cm10ob" path="res://Scripts/combat/turns/turn_scheduler.gd" id="2_tbw57"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tbw57"]
 
 [node name="BaseCombatScene" type="Node3D"]
 script = ExtResource("1_gvf7i")
 metadata/_custom_type_script = "uid://ced44b2af32qx"
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.81139)
+
 [node name="TurnScheduler" type="Node" parent="."]
 script = ExtResource("2_tbw57")
 metadata/_custom_type_script = "uid://ci3p022cm10ob"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(22.4481, 0, 0, 0, 1, 0, 0, 0, -22.4011, 0, -1.64681, 0)
+mesh = SubResource("BoxMesh_tbw57")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.5059, 0)
+light_color = Color(0.14902, 1, 1, 1)
+omni_range = 4096.0
+omni_attenuation = 0.0
