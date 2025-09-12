@@ -11,8 +11,9 @@ var _base_HP_scaling_factor: float = 2.5
 var _base_ATK: float = 10
 var _base_ATK_scaling_factor: float = 2
 var _base_DEF: float = 10
-var _base_DEF_scaling_factor: float = 2
+var _base_DEF_scaling_factor: float = 1.5
 var _base_SPD: float = 10
+var _base_SPD_scaling_factor: float = 1.2
 
 var _active_resist_spreads: Array[ElementalSpreadData]
 var _active_ele_pen_spreads: Array[ElementalSpreadData]
@@ -131,7 +132,7 @@ func calc_effective_MAX_HP() -> float:
 
 func calc_effective_ATK() -> float:
 	var scaled_atk = CombatRules.calc_level_scaled_stat(_base_ATK, _level, _base_ATK_scaling_factor)
-	var atk_multiplier: float = 0
+	var atk_multiplier: float = 1
 	for multiplier in _active_atk_multipliers:
 		atk_multiplier += multiplier.multiplier_value
 	return scaled_atk * atk_multiplier
@@ -139,14 +140,14 @@ func calc_effective_ATK() -> float:
 
 func calc_effective_DEF() -> float:
 	var scaled_def = CombatRules.calc_level_scaled_stat(_base_DEF, _level, _base_DEF_scaling_factor)
-	var def_multiplier: float = 0
+	var def_multiplier: float = 1
 	for multiplier in _active_def_multipliers:
 		def_multiplier += multiplier.multiplier_value
 	return scaled_def * def_multiplier
 
 
 func calc_outdmg_multiplier() -> float:
-	var total_mult: float = 0
+	var total_mult: float = 1
 	for multiplier in _active_outdmg_multipliers:
 		total_mult += multiplier.multiplier_value
 	return total_mult
@@ -173,10 +174,11 @@ func calc_crit_multi() -> float:
 
 
 func calc_effective_SPD() -> float:
+	var scaled_spd = CombatRules.calc_level_scaled_stat(_base_SPD, _level, _base_SPD_scaling_factor)
 	var total_mult: float = 1
 	for multiplier in _active_speed_modifiers:
 		total_mult += multiplier.multiplier_value
-	return _base_SPD * total_mult
+	return scaled_spd * total_mult
 
 
 func force_update_stats():

@@ -1,6 +1,8 @@
 class_name CombatantData
 extends Resource
 
+@export_group("ID")
+@export var combatant_id: ID.CombatantID
 @export_group("Frontend")
 @export var combatant_name: String = "Glorp"
 @export var description: String = "Guh!"

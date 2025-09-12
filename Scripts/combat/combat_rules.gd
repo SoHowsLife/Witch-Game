@@ -4,6 +4,7 @@ const DEFAULT_LEVEL_SCALE_FACTOR: float = 2
 const DEFAULT_MULT_EVERY_X: float = 10
 
 enum Elements {
+	NONELEMENTAL = -1,
 	FIRE,
 	WATER,
 	AIR,
