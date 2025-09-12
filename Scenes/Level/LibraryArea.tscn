@@ -39,6 +39,7 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Library Area/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+depth = 10.48
 polygon = PackedVector2Array(-9.04908, 2.72843, -12.4281, -17.1595, 10.7423, -18.1249, 10.4044, 2.68015, 6.73572, 3.01805, 3.12492, 9.72189, -14.0598, 9.72189, -13.7689, 16.2329, 17.2215, 16.0399, 17.9165, -24.3882, -17.6917, -24.1348, -17.1282, 1.27754)
 
 [node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="Library Area/StaticBody3D"]
