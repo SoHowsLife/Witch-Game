@@ -64,6 +64,12 @@ func init_combatant(spec: CombatantData):
 	actions.init_actions(spec.action_spread)
 	actions.init_agent(spec.default_agent)
 
+
+func receive_damage_instance(damage: DamageInstance):
+	stats.current_HP -= damage.unmitigated_damage_dealt
+	pass
+
+
 func generate_turn_population(total_speed: float, displayed_turns: int, log_debug = false) -> bool:
 	_scheduler_references = []
 	var print_times = []
@@ -108,6 +114,10 @@ func validate_turn_scheduler(total_speed: float, displayed_turns: int) -> bool:
 			removed_turns.push_back(_scheduler_references.pop_back())
 		turns_removed.emit(removed_turns)
 		return true
+
+
+func get_scheduler_references():
+	return _scheduler_references
 
 
 func readd_ended_turn():

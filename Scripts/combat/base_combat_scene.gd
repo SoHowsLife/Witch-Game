@@ -14,6 +14,7 @@ var state: CombatState = CombatState.SCHEDULER_IDLING
 
 @onready var battlefield_info: BattlefieldInfo = BattlefieldInfo.new()
 @onready var _scheduler: TurnScheduler = $"TurnScheduler"
+@onready var _frontend: CombatFrontendHandler = $"CombatFrontendHandler"
 
 
 func _ready() -> void:
@@ -23,7 +24,6 @@ func _ready() -> void:
 	init_combat()
 	if log_debug:
 		print("Combat scene initialized.")
-	
 
 
 func init_combat():
@@ -66,12 +66,17 @@ func give_turn(combatant: Combatant):
 
 func process_action(action: ActionInstance):
 	# Start Animation
+	_frontend.handle_action_animation(action)
 	# Await Effect Signal from Animation
 	# Process Effects
-	if action.data.attack != null:
-		pass
+	var attack = action.data.attack as AttackData
+	if attack != null:
 		# Do damage
+		for receiver in action.receivers:
+			var damage_inst = CombatRules.do_attack(action.actor, receiver, attack)
+			_frontend.handle_damage_instance(damage_inst)
 		# Apply effects
+	CombatManager.tracking_action_used.emit(action)
 	pass
 
 
@@ -82,3 +87,7 @@ func _on_turn_finish(combatant: Combatant):
 	state = CombatState.SCHEDULER_IDLING
 	state_update()
 	pass
+
+
+func _on_scheduler_request_frontend_update(schedule: Array[TurnSchedulerTask]):
+	_frontend.handle_turn_update(schedule)

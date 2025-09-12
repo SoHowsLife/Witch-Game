@@ -3,6 +3,7 @@ extends Node
 
 signal stats_changed
 signal speed_changed(new_speed: float, old_speed: float)
+signal hp_changed(new_hp: float, old_hp: float)
 signal hp_at_zero
 
 var _level: int = 0
@@ -84,6 +85,7 @@ var effective_SPD: float = 10:
 
 var current_HP: float = 1:
 	set(x):
+		hp_changed.emit(x, current_HP)
 		current_HP = clampf(x, 0, MAX_HP)
 		if is_zero_approx(current_HP):
 			hp_at_zero.emit()
@@ -95,7 +97,7 @@ func _ready():
 
 
 func update_level(value: int):
-	_level = clampi(value, 1, INF)
+	_level = clampi(value, 1, 100)
 
 
 func init_stats(stat_spread: StatSpreadData, level: int = 1):
@@ -124,6 +126,11 @@ func get_ele_pen(element: CombatRules.Elements) -> float:
 	for spread in _active_ele_pen_spreads:
 		pen += spread.get_element_multiplier(element)
 	return pen
+
+
+func receive_damage_instance(instance: DamageInstance):
+	
+	pass
 
 
 func calc_effective_MAX_HP() -> float:

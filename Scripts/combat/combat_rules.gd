@@ -15,6 +15,27 @@ enum Elements {
 }
 
 
+func do_attack(attacker: Combatant, defender: Combatant, attack: AttackData) -> DamageInstance:
+	var is_crit = roll_for_crit(attacker.stats, attack)
+	var instance = DamageInstance.new()
+	instance.source = attacker
+	instance.defender = defender
+	instance.unmitigated_damage_dealt = calc_damage(attacker.stats, defender.stats, attack, is_crit)
+	instance.element = attack.element
+	instance.is_crit = is_crit
+	defender.receive_damage_instance(instance)
+	return instance
+
+
+func do_unmitigated_damage(value: float, defender: Combatant) -> DamageInstance:
+	var instance = DamageInstance.new()
+	instance.defender = defender
+	instance.unmitigated_damage_dealt = value
+	instance.is_crit = false
+	return instance
+
+
+
 func calc_level_scaled_stat(base_stat: float, level: float, level_factor: float = DEFAULT_LEVEL_SCALE_FACTOR,
 		mult_every_x: float = DEFAULT_MULT_EVERY_X) -> float:
 	var level_multiplier = pow(level_factor, level / mult_every_x)

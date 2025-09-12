@@ -1,7 +1,7 @@
 class_name TurnScheduler
 extends Node
 
-signal request_update
+signal request_frontend_update(schedule: Array[TurnSchedulerTask])
 
 const MAX_FORESEEABLE_TURNS: int = 10
 
@@ -23,6 +23,7 @@ func populate_scheduler(log_debug: bool):
 	_total_speed = new_tspd
 	for combatant in _attached_combatants:
 		combatant.generate_turn_population(new_tspd, MAX_FORESEEABLE_TURNS, log_debug)
+	request_frontend_update.emit()
 
 
 func validate_scheduler():
@@ -30,6 +31,7 @@ func validate_scheduler():
 	_total_speed = new_tspd
 	for combatant in _attached_combatants:
 		combatant.validate_turn_scheduler(new_tspd, MAX_FORESEEABLE_TURNS)
+	request_frontend_update.emit()
 
 
 func attach_to_scheduler(combatant: Combatant):
@@ -42,10 +44,13 @@ func attach_to_scheduler(combatant: Combatant):
 
 func detach_from_scheduler(combatant: Combatant):
 	_attached_combatants.erase(combatant)
+	for turn in combatant.get_scheduler_references():
+		_schedule.erase(turn)
 	combatant.turns_added.disconnect(_on_request_add_turns)
 	combatant.turns_removed.disconnect(_on_request_remove_turns)
 	combatant.speed_changed.disconnect(_on_combatant_speed_changed)
 	combatant.turn_moved.disconnect(_on_combatant_turn_moved)
+	request_frontend_update.emit(_schedule)
 
 
 func sort_scheduler_queue():
@@ -77,21 +82,25 @@ func _on_combatant_speed_changed(_combatant: Combatant, _speed: float):
 	for combatant in _attached_combatants:
 		combatant.validate_turn_scheduler(new_tspd, MAX_FORESEEABLE_TURNS)
 	sort_scheduler_queue()
+	request_frontend_update.emit()
 
 
 func _on_combatant_turn_moved():
 	sort_scheduler_queue()
+	request_frontend_update.emit()
 
 
 func _on_request_add_turns(added_turns: Array[TurnSchedulerTask]):
 	for turn in added_turns:
 		_schedule.push_back(turn)
 	sort_scheduler_queue()
+	request_frontend_update.emit()
 
 
 func _on_request_remove_turns(removed_turns: Array[TurnSchedulerTask]):
 	for turn in removed_turns:
 		_schedule.erase(turn)
+	request_frontend_update.emit()
 
 
 func _get_tspd() -> int:
