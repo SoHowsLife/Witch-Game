@@ -29,6 +29,7 @@ var _turn_share: int = 0
 
 @onready var stats = $"StatsComponent" as StatsComponent
 @onready var effects = $"EffectsComponent" as EffectsComponent
+@onready var _debug_namesign = str(entity_name, ": ")
 
 func _ready() -> void:
 	if combatant_template:
@@ -42,15 +43,19 @@ func init_stats(stats_spec: CombatantData):
 	pass
 
 
-func generate_turn_population(total_speed: float, displayed_turns: int) -> bool:
+func generate_turn_population(total_speed: float, displayed_turns: int, log_debug: bool) -> bool:
 	_scheduler_references = []
-	_turn_share = _turn_share >= ceili(total_speed / speed * displayed_turns)
+	_turn_share = ceili(speed / total_speed * displayed_turns)
+	if log_debug:
+		print(_debug_namesign, "Calculated turn share = ", _turn_share)
 	for i in range(_turn_share):
 		var task = TurnSchedulerTask.new()
 		task.attached_combatant = self
 		task.turn_time = (i + 1) * _base_turn_time
 		_scheduler_references.push_back(task)
 	turns_added.emit(_scheduler_references)
+	if log_debug:
+		print(_debug_namesign, "Made scheduler turns = ", _scheduler_references)
 	return true
 
 
@@ -59,7 +64,7 @@ func validate_turn_scheduler(total_speed: float, displayed_turns: int) -> bool:
 		push_warning("Tried to validate empty turns: ", self)
 		return false
 
-	var new_turn_share = ceili(total_speed / speed * displayed_turns)
+	var new_turn_share = ceili(speed / total_speed * displayed_turns)
 	if _turn_share == new_turn_share:
 		return true
 	elif _turn_share < new_turn_share:

@@ -1,5 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq87felhlp8s8"]
+[gd_scene load_steps=4 format=3 uid="uid://cq87felhlp8s8"]
 
 [ext_resource type="PackedScene" uid="uid://3hvll6rqj0x" path="res://Scenes/base_combat_scene.tscn" id="1_dkgtt"]
+[ext_resource type="PackedScene" uid="uid://dfn5o5bq7o6hu" path="res://Scenes/Combat/base_combatant.tscn" id="2_80eqr"]
+[ext_resource type="Resource" uid="uid://8shbf2iq5emc" path="res://Data/Combat/ExampleCombatant.tres" id="3_e10qk"]
 
-[node name="BaseCombatScene" instance=ExtResource("1_dkgtt")]
+[node name="BaseCombatScene" node_paths=PackedStringArray("ally_combatants", "enemy_combatants") instance=ExtResource("1_dkgtt")]
+log_debug = true
+ally_combatants = [NodePath("BaseCombatant")]
+enemy_combatants = [NodePath("BaseCombatant2")]
+
+[node name="BaseCombatant" parent="." index="4" instance=ExtResource("2_80eqr")]
+combatant_template = ExtResource("3_e10qk")
+entity_name = "Test1"
+
+[node name="BaseCombatant2" parent="." index="5" instance=ExtResource("2_80eqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.37362, 0, -2.2597)
+entity_name = "Test2"

@@ -7,7 +7,7 @@ enum CombatState {
 	AWAITING_TURN_FINISH,
 }
 
-@export var print_debug: bool = false
+@export var log_debug: bool = false
 @export var ally_combatants: Array[Combatant] = []
 @export var enemy_combatants: Array[Combatant] = []
 
@@ -29,7 +29,10 @@ func init_combat():
 		_scheduler.attach_to_scheduler(ally)
 	for enemy in enemy_combatants:
 		_scheduler.attach_to_scheduler(enemy)
-	_scheduler.populate_scheduler()
+	_scheduler.populate_scheduler(log_debug)
+	if log_debug:
+		_scheduler.print_attached_combatants()
+		_scheduler.print_scheduler()
 	pass
 
 

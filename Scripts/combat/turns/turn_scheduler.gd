@@ -5,8 +5,6 @@ signal request_update
 
 const MAX_FORESEEABLE_TURNS: int = 10
 
-@export var print_debug: bool = false
-
 var _total_speed: float
 
 var _schedule: Array[TurnSchedulerTask]
@@ -20,14 +18,16 @@ func advance_scheduler() -> Combatant:
 	return _schedule.front().attached_combatant
 
 
-func populate_scheduler():
+func populate_scheduler(log_debug: bool):
 	var new_tspd = _get_tspd()
+	_total_speed = new_tspd
 	for combatant in _attached_combatants:
-		combatant.generate_turn_population(new_tspd, MAX_FORESEEABLE_TURNS)
+		combatant.generate_turn_population(new_tspd, MAX_FORESEEABLE_TURNS, log_debug)
 
 
 func validate_scheduler():
 	var new_tspd = _get_tspd()
+	_total_speed = new_tspd
 	for combatant in _attached_combatants:
 		combatant.validate_turn_scheduler(new_tspd, MAX_FORESEEABLE_TURNS)
 
@@ -50,6 +50,27 @@ func detach_from_scheduler(combatant: Combatant):
 
 func sort_scheduler_queue():
 	_schedule.sort_custom(TurnSchedulerTask.task_compare)
+
+
+func print_attached_combatants():
+	if _attached_combatants.size() == 0:
+		push_warning("No combatants attached to scheduler. Error?")
+		return
+	var print_msg: String = _attached_combatants.front().entity_name
+	for combatant in _attached_combatants:
+		print_msg = str(print_msg, ", ", combatant.entity_name)
+	print("ATTACHED_COMBATANTS: [", print_msg, "]")
+
+
+
+func print_scheduler():
+	if _schedule.size() == 0:
+		push_warning("No combatants attached to scheduler. Error?")
+		return
+	var print_msg: String = _schedule.front().get_print()
+	for turn in _schedule:
+		print_msg = str(print_msg, ", ", turn.get_print())
+	print("TURN_SCHEDULE: [", print_msg, "]")
 
 
 func _on_combatant_speed_changed(_combatant: Combatant, _speed: float):
