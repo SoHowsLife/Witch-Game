@@ -35,6 +35,7 @@ visible = false
 sky_mode = 2
 
 [node name="Cave Area" parent="." instance=ExtResource("5_vgck3")]
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cave Area"]
 
