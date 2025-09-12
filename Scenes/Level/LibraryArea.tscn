@@ -12,7 +12,7 @@ size = Vector3(36.3262, 1, 43.9766)
 [sub_resource type="BoxShape3D" id="BoxShape3D_g05fx"]
 size = Vector3(6.67407, 10.7732, 1)
 
-[node name="ForestExit" type="Node3D"]
+[node name="LibraryArea" type="Node3D"]
 
 [node name="LevelStartPos" type="Node3D" parent="." node_paths=PackedStringArray("start_nodes") groups=["Level Positions"]]
 script = ExtResource("1_g05fx")

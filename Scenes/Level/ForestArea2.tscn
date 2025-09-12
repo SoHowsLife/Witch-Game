@@ -56,15 +56,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6766, 1, -3.54433)
 shape = SubResource("CylinderShape3D_h3faw")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest Area 2/StaticBody3D"]
-transform = Transform3D(1.535, 0, 0, 0, 1.535, 0, 0, 0, 1.535, 4.17672, 1, 0.13176)
+transform = Transform3D(1.935, 0, 0, 0, 1.935, 0, 0, 0, 1.935, 4.17672, 1, 0.13176)
 shape = SubResource("CylinderShape3D_h3faw")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Forest Area 2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80522, 1, 2.93356)
+transform = Transform3D(1.265, 0, 0, 0, 1.265, 0, 0, 0, 1.265, -1.80522, 1, 2.93356)
 shape = SubResource("CylinderShape3D_h3faw")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Forest Area 2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.70687, 1, 6.01856)
+transform = Transform3D(1.28, 0, 0, 0, 1.28, 0, 0, 0, 1.28, -4.70687, 1, 6.01856)
 shape = SubResource("CylinderShape3D_h3faw")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="Forest Area 2/StaticBody3D"]
