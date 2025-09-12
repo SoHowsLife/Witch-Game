@@ -1,6 +1,8 @@
 class_name EncounterEnemyInstanceData
 extends Resource
 
-var level: int = 1
-var enemy_data: CombatantData
-var agent_override: ActionAgent.AgentType
+
+@export var level: int = 1
+@export var enemy_data: CombatantData
+@export var force_agent_override: bool = false
+@export var agent_override: ActionAgent.AgentType

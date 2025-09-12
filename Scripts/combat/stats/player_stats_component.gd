@@ -4,7 +4,6 @@ extends StatsComponent
 var equipment_HP: float = 0
 var equipment_ATK: float = 0
 var equipment_DEF: float = 0
-var equipment_m
 
 
 func clear_equip_stats():

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CombatantData" load_steps=6 format=3 uid="uid://d3t0r2exy7t6x"]
+
+[ext_resource type="Script" uid="uid://bucjs2sidyhkd" path="res://Scripts/combat/actions/action_data.gd" id="1_nmlmi"]
+[ext_resource type="Script" uid="uid://c1jyp57kx2l4u" path="res://Scripts/combat/combatant_data.gd" id="1_vkkjo"]
+[ext_resource type="Resource" uid="uid://h1p1eofl6i5c" path="res://Data/Combat/Stats/ExampleStats.tres" id="2_8gf27"]
+[ext_resource type="Script" uid="uid://doocwh8b6rd11" path="res://Scripts/combat/actions/action_spread_data.gd" id="2_udiyt"]
+
+[sub_resource type="Resource" id="Resource_knlng"]
+script = ExtResource("2_udiyt")
+possible_attacks = Array[ExtResource("1_nmlmi")]([])
+possible_support = Array[ExtResource("1_nmlmi")]([])
+possible_other = Array[ExtResource("1_nmlmi")]([])
+metadata/_custom_type_script = "uid://doocwh8b6rd11"
+
+[resource]
+script = ExtResource("1_vkkjo")
+combatant_name = "Glorp"
+description = "Guh!"
+stat_spread = ExtResource("2_8gf27")
+action_spread = SubResource("Resource_knlng")
+default_agent = 0
+metadata/_custom_type_script = "uid://c1jyp57kx2l4u"

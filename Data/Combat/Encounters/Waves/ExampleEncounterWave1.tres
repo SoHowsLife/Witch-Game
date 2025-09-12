@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EncounterWaveData" load_steps=4 format=3 uid="uid://dp8icrvdqvnuv"]
+
+[ext_resource type="Script" uid="uid://c56t5x6xkfbom" path="res://Scripts/combat/encounter/encounter_enemy_instance_data.gd" id="1_7jb3f"]
+[ext_resource type="Script" uid="uid://ixogu2xhw6s4" path="res://Scripts/combat/encounter/encounter_wave_data.gd" id="2_qis3c"]
+
+[sub_resource type="Resource" id="Resource_7jb3f"]
+script = ExtResource("1_7jb3f")
+level = 1
+agent_override = 0
+metadata/_custom_type_script = "uid://c56t5x6xkfbom"
+
+[resource]
+script = ExtResource("2_qis3c")
+enemies = Array[ExtResource("1_7jb3f")]([SubResource("Resource_7jb3f")])
+metadata/_custom_type_script = "uid://ixogu2xhw6s4"

@@ -9,4 +9,4 @@ extends Resource
 @export_group("Backend")
 @export var stat_spread: StatSpreadData
 @export var action_spread: ActionSpreadData
-@export var default_agent: ActionAgent
+@export var default_agent: ActionAgent.AgentType

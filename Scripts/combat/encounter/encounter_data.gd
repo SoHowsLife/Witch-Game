@@ -1,3 +1,4 @@
+class_name EncounterData
 extends Resource
 
 
