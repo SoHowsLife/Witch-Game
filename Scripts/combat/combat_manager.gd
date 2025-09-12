@@ -8,5 +8,6 @@ signal tracking_action_used(userID: ID.CombatantID, instance: ActionInstance)
 
 var active_combat_scene: CombatStateMachine
 
+
 func initiate_combat(encounter_data: EncounterData):
 	pass

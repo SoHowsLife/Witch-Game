@@ -55,12 +55,13 @@ func state_update():
 func give_turn(combatant: Combatant):
 	state = CombatState.AWAITING_TURN_FINISH
 	combatant.turn_finished.connect(_on_turn_finish)
+	combatant.tick_start_of_turn()
 	var action: ActionInstance = combatant.get_action(battlefield_info)
 	if action == null:
 		push_error("Failed to retrieve action from ", combatant.entity_name, ".")
 	else:
 		process_action(action)
-	pass
+	combatant.tick_end_of_turn()
 
 
 func process_action(action: ActionInstance):
@@ -71,7 +72,6 @@ func process_action(action: ActionInstance):
 		pass
 		# Do damage
 		# Apply effects
-	#
 	pass
 
 
