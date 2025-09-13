@@ -1,6 +1,8 @@
 class_name Interactable
 extends CharacterBody3D
 
+@export var id : ID.InteractionID
+
 var dialogic_name : String
 
 func _ready() -> void:
@@ -10,5 +12,4 @@ func _process(delta: float) -> void:
 	pass
 
 func interact() -> void:
-	print("Hi ", self)
-	DialogueScreen.play_timeline("Test")
+	QuestManager.interacted.emit(id)

@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="Witch Game"
-run/main_scene="res://Models/3D Models/Village Test.fbx"
+run/main_scene="uid://yg6p8rya8ia2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
 ID="*res://Scripts/ID.gd"
-QuestManager="*res://Scripts/Quest/QuestManager.gd"
-Inventory="*res://Scripts/Inventory.gd"
+QuestManager="*res://Scripts/Quest/quest_manager.gd"
+Inventory="*res://Scripts/inventory.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 DialogueScreen="*res://Scenes/DialogueScreen.tscn"
 LevelTransitionManager="*res://Scenes/Level/LevelTransitionManager.tscn"
