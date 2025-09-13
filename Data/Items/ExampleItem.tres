@@ -5,23 +5,25 @@
 
 [sub_resource type="Resource" id="Resource_vjk8n"]
 script = ExtResource("1_kkb8q")
-max_health = 0
-defense = 0
-damage = 0
-damage_mult = 1.0
-thorns_mult = 0.0
+attack = 0.0
+critical_hit_chance = 0.0
+critical_multiplier = 0.0
+health = 0.0
+defense = 0.0
 metadata/_custom_type_script = "uid://bt0websrasife"
 
 [resource]
 script = ExtResource("2_frvl4")
-ID = 1
+item_id = 0
 name = "Example Item"
 description = "An example item."
+category = 0
 usable_in_world = false
 usable_in_battle = false
 consumable = false
 buy_price = 0
 sell_price = 0
+equippable = false
 equip_type = 0
 equip_data = SubResource("Resource_vjk8n")
 metadata/_custom_type_script = "uid://bhjvfxs51vg5p"
