@@ -3,6 +3,8 @@ extends Node
 const DEFAULT_LEVEL_SCALE_FACTOR: float = 2
 const DEFAULT_MULT_EVERY_X: float = 10
 
+const MAX_COMBATANTS_ON_A_SIDE = 5
+
 enum Elements {
 	NONELEMENTAL = -1,
 	FIRE,

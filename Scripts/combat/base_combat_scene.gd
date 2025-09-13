@@ -94,4 +94,4 @@ func _on_scheduler_request_frontend_update(schedule: Array[TurnSchedulerTask]):
 
 
 func _on_request_player_input_action(actor: Combatant):
-	_frontend.handle_wait_player_control(actor)
+	_frontend.handle_wait_player_control(battlefield_info, actor)

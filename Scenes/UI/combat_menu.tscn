@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8dqq725i6wto"]
+[gd_scene load_steps=4 format=3 uid="uid://c8dqq725i6wto"]
 
 [ext_resource type="Script" uid="uid://c1hw4a1velj65" path="res://Scripts/UI/combat/combat_control.gd" id="1_cj5fs"]
 [ext_resource type="PackedScene" uid="uid://0jatcfr4dmlt" path="res://Scenes/UI/action_type_select.tscn" id="2_s3jne"]
+[ext_resource type="PackedScene" uid="uid://hlilx37dj6c6" path="res://Scenes/UI/target_select.tscn" id="3_5d2me"]
 
 [node name="CombatMenu" type="Control"]
 layout_mode = 3
@@ -35,6 +36,9 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 columns = 3
+
+[node name="TargetSelect" parent="." instance=ExtResource("3_5d2me")]
+layout_mode = 0
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://hlilx37dj6c6"]
+
+[ext_resource type="Script" uid="uid://3njfgs7y746l" path="res://Scripts/UI/combat/target_select.gd" id="1_ygb41"]
+
+[node name="TargetSelect" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ygb41")
+
+[node name="PlayerSide" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="EnemySide" type="VBoxContainer" parent="."]
+layout_mode = 2

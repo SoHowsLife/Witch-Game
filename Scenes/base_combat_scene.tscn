@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ced44b2af32qx" path="res://Scripts/combat/base_combat_scene.gd" id="1_gvf7i"]
 [ext_resource type="Script" uid="uid://ci3p022cm10ob" path="res://Scripts/combat/turns/turn_scheduler.gd" id="2_tbw57"]
 [ext_resource type="PackedScene" uid="uid://c8dqq725i6wto" path="res://Scenes/UI/combat_menu.tscn" id="3_44qdh"]
-[ext_resource type="Script" uid="uid://lf4x44fjq0s1" path="res://Scenes/combat_frontend_handler.gd" id="3_p87hv"]
+[ext_resource type="Script" uid="uid://lf4x44fjq0s1" path="res://Scripts/combat/combat_frontend_handler.gd" id="3_p87hv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tbw57"]
 
