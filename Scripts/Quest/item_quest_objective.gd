@@ -1,4 +1,4 @@
-extends QuestObjective
+extends QuestObjectiveData
 
 class_name ItemQuestObjective
 

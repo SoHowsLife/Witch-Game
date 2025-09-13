@@ -105,7 +105,7 @@ func _load_items_from_disk():
 					var item_data = ResourceLoader.load(item_path) as ItemData
 					if item_data:
 						var item : Item = Item.new(item_data)
-						_items[item_data.item_id] = item
+						_items[item_data.item_ID] = item
 						var behavior = item_data.equip_data.item_behavior_script
 						if behavior: 
 							item.behavior = item_data.equip_data.item_behavior_script.new()

@@ -4,7 +4,7 @@ class_name ItemData
 
 @export_category("ID")
 ## Internal ID for the item
-@export var item_id : ID.ItemID = ID.ItemID.None
+@export var item_ID : ID.ItemID = ID.ItemID.None
 
 @export_category("Basic Info")
 ## Display name of the item

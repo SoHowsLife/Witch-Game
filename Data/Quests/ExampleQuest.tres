@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="Quest" load_steps=5 format=3 uid="uid://b336s4461pl6i"]
+[gd_resource type="Resource" script_class="QuestData" load_steps=5 format=3 uid="uid://b336s4461pl6i"]
 
-[ext_resource type="Script" uid="uid://dl207rxsgf2k1" path="res://Scripts/Quest/quest_objective.gd" id="1_5xjih"]
+[ext_resource type="Script" uid="uid://dl207rxsgf2k1" path="res://Scripts/Quest/quest_objective_data.gd" id="1_5xjih"]
 [ext_resource type="Script" uid="uid://c7aw85unwggpy" path="res://Scripts/Quest/destination_quest_objective.gd" id="2_38elh"]
-[ext_resource type="Script" uid="uid://dwcobx5u5xvc1" path="res://Scripts/Quest/quest.gd" id="4_vy7dw"]
+[ext_resource type="Script" uid="uid://dwcobx5u5xvc1" path="res://Scripts/Quest/quest_data.gd" id="4_vy7dw"]
 
 [sub_resource type="Resource" id="Resource_5xjih"]
 script = ExtResource("2_38elh")
@@ -11,7 +11,7 @@ metadata/_custom_type_script = "uid://c7aw85unwggpy"
 
 [resource]
 script = ExtResource("4_vy7dw")
-quest_id = 1
+quest_ID = 1
 title = "Example Quest"
 description = "An example quest."
 objectives = Array[ExtResource("1_5xjih")]([SubResource("Resource_5xjih")])
