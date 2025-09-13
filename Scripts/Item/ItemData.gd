@@ -31,9 +31,9 @@ class_name ItemData
 @export var sell_price : int = 0
 
 @export_category("Equipment Data")
-## If and how the item can be equipped
-@export var equip_type : Inventory.EquipType = Inventory.EquipType.NONE
+## If the item can be equipped
+@export var equippable = false
+## Which slot the item can be equipped
+@export var equip_type : Inventory.EquipType = Inventory.EquipType.WEAPON
 ## Apply changes to the player when equipped
 @export var equip_data : EquipData
-
-var amount = 0
