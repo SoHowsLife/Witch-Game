@@ -1,11 +1,6 @@
 class_name Combatant
 extends Node3D
 
-enum CombatSide {
-	PLAYER_SIDE,
-	ENEMY_SIDE
-}
-
 const SPEED_CONSTANT: float = 100
 
 signal speed_changed(combatant: Combatant, new_speed: float)
@@ -21,7 +16,7 @@ signal turns_removed(task: Array[TurnSchedulerTask])
 @export var description: String = "Buh."
 
 
-var combatant_side: CombatSide
+var combatant_side: CombatRules.CombatSide
 
 var max_hp: float:
 	get:

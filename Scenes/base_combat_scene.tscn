@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://3hvll6rqj0x"]
+[gd_scene load_steps=6 format=3 uid="uid://3hvll6rqj0x"]
 
 [ext_resource type="Script" uid="uid://ced44b2af32qx" path="res://Scripts/combat/base_combat_scene.gd" id="1_gvf7i"]
 [ext_resource type="Script" uid="uid://ci3p022cm10ob" path="res://Scripts/combat/turns/turn_scheduler.gd" id="2_tbw57"]
+[ext_resource type="PackedScene" uid="uid://c8dqq725i6wto" path="res://Scenes/UI/combat_menu.tscn" id="3_44qdh"]
 [ext_resource type="Script" uid="uid://lf4x44fjq0s1" path="res://Scenes/combat_frontend_handler.gd" id="3_p87hv"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tbw57"]
@@ -14,6 +15,8 @@ metadata/_custom_type_script = "uid://ced44b2af32qx"
 [node name="CombatFrontendHandler" type="Node3D" parent="."]
 script = ExtResource("3_p87hv")
 metadata/_custom_type_script = "uid://lf4x44fjq0s1"
+
+[node name="CombatMenu" parent="CombatFrontendHandler" instance=ExtResource("3_44qdh")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.81139)

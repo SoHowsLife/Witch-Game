@@ -29,11 +29,11 @@ func _ready() -> void:
 func init_combat():
 	for ally in ally_combatants:
 		_scheduler.attach_to_scheduler(ally)
-		ally.combatant_side = Combatant.CombatSide.PLAYER_SIDE
+		ally.combatant_side = CombatRules.CombatSide.PLAYER_SIDE
 	battlefield_info.player_side = ally_combatants
 	for enemy in enemy_combatants:
 		_scheduler.attach_to_scheduler(enemy)
-		enemy.combatant_side = Combatant.CombatSide.ENEMY_SIDE
+		enemy.combatant_side = CombatRules.CombatSide.ENEMY_SIDE
 	battlefield_info.enemy_side = enemy_combatants
 	_scheduler.populate_scheduler(log_debug)
 	if log_debug:
@@ -91,3 +91,7 @@ func _on_turn_finish(combatant: Combatant):
 
 func _on_scheduler_request_frontend_update(schedule: Array[TurnSchedulerTask]):
 	_frontend.handle_turn_update(schedule)
+
+
+func _on_request_player_input_action(actor: Combatant):
+	_frontend.handle_wait_player_control(actor)

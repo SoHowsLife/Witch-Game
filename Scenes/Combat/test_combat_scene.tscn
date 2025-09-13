@@ -10,5 +10,7 @@ enemy_combatants = [NodePath("BaseCombatant2"), NodePath("BaseCombatant3")]
 [node name="BaseCombatant" parent="." index="4" instance=ExtResource("2_80eqr")]
 
 [node name="BaseCombatant2" parent="." index="5" instance=ExtResource("2_80eqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27391, 0, 0)
 
 [node name="BaseCombatant3" parent="." index="6" instance=ExtResource("2_80eqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.73598, 0, 0)

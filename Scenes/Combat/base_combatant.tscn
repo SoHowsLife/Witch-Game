@@ -8,6 +8,8 @@
 
 [node name="BaseCombatant" type="Node3D"]
 script = ExtResource("1_umgg8")
+entity_name = null
+description = null
 metadata/_custom_type_script = "uid://b4hk8p1boedon"
 
 [node name="StatsComponent" type="Node" parent="."]

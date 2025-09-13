@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ActionData" load_steps=4 format=3 uid="uid://bhsqvll2irjun"]
+
+[ext_resource type="Script" uid="uid://biiid4pvf6erk" path="res://Scripts/combat/actions/attack_data.gd" id="1_1hfvh"]
+[ext_resource type="Script" uid="uid://bucjs2sidyhkd" path="res://Scripts/combat/actions/action_data.gd" id="1_4g82w"]
+
+[sub_resource type="Resource" id="Resource_sraqo"]
+script = ExtResource("1_1hfvh")
+power = 20
+element = -1
+critical_hit_chance = 0.3
+crit_multiplier = 1.2
+metadata/_custom_type_script = "uid://biiid4pvf6erk"
+
+[resource]
+script = ExtResource("1_4g82w")
+action_id = 1
+name = "Scratch"
+description = "Scratches."
+category = 0
+attack = SubResource("Resource_sraqo")
+animation = false
+target_type = 0
+effects = []
+initial_cooldown = 0
+cooldown_after_use = 0
+metadata/_custom_type_script = "uid://bucjs2sidyhkd"

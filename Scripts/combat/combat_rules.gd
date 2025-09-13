@@ -14,6 +14,26 @@ enum Elements {
 	POISON,
 }
 
+enum ActionType {
+	ATTACK,
+	SUPPORT,
+	OTHER,
+}
+
+enum ActionTargetType {
+	SINGLE,
+	SINGLE_SAME_SIDE,
+	SINGLE_OPP_SIDE,
+	SELF,
+	AOE_SAME_SIDE,
+	AOE_OPP_SIDE,
+	AOE_BOTH_SIDE,
+}
+
+enum CombatSide {
+	PLAYER_SIDE,
+	ENEMY_SIDE,
+}
 
 func do_attack(attacker: Combatant, defender: Combatant, attack: AttackData) -> DamageInstance:
 	var is_crit = roll_for_crit(attacker.stats, attack)

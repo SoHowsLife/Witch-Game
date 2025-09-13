@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://0jatcfr4dmlt"]
+
+[ext_resource type="Script" uid="uid://be0c8y8chckh5" path="res://Scripts/UI/combat/action_type_select.gd" id="1_wr30c"]
+
+[node name="ActionTypeSelect" type="VBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wr30c")
+
+[node name="ChooseAttack" type="Button" parent="."]
+layout_mode = 2
+text = "Attack"
+
+[node name="ChooseSupport" type="Button" parent="."]
+layout_mode = 2
+text = "Support"
+
+[node name="ChooseItems" type="Button" parent="."]
+layout_mode = 2
+text = "Items"
+
+[node name="ChooseOther" type="Button" parent="."]
+layout_mode = 2
+text = "Other"

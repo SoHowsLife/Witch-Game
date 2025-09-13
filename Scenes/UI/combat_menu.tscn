@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8dqq725i6wto"]
+
+[ext_resource type="Script" uid="uid://c1hw4a1velj65" path="res://Scripts/UI/combat/combat_control.gd" id="1_cj5fs"]
+[ext_resource type="PackedScene" uid="uid://0jatcfr4dmlt" path="res://Scenes/UI/action_type_select.tscn" id="2_s3jne"]
+
+[node name="CombatMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_cj5fs")
+metadata/_custom_type_script = "uid://c1hw4a1velj65"
+
+[node name="ActionTypeSelect" parent="." instance=ExtResource("2_s3jne")]
+layout_mode = 0
+
+[node name="AttackSelect" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="SupportSelect" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="ItemSelect" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="OtherSelect" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 27.0
+offset_right = 134.0
+offset_bottom = 58.0
+text = "Back"

@@ -13,6 +13,11 @@ enum QuestID {
 enum ActionID {
 	None = 0,
 	ExampleAction = 1,
+	Scratch = 2,
+	Sting = 3,
+	Fireball = 4,
+	Maul = 5,
+	Roar = 6,
 }
 
 enum CombatantID {
