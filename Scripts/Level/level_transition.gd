@@ -15,6 +15,7 @@ func on_body_entered(body: Node3D):
 	if body is Player:
 		body.can_move = false
 		LevelTransitionManager.level_transition(str("res://Scenes/Level/" + target_level + ".tscn"), level_id)
+		LevelTransitionManager.level_transitioned.emit(target_level)
 
 func on_body_exited(body: Node3D):
 	print("Exit Transition")

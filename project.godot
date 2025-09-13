@@ -18,8 +18,8 @@ config/icon="res://Sprites/icon.svg"
 [autoload]
 
 ID="*res://Scripts/ID.gd"
-QuestManager="*res://Scripts/Quest/QuestManager.gd"
-Inventory="*res://Scripts/Inventory.gd"
+QuestManager="*res://Scripts/Quest/quest_manager.gd"
+Inventory="*res://Scripts/inventory.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 DialogueScreen="*res://Scenes/DialogueScreen.tscn"
 LevelTransitionManager="*res://Scenes/Level/LevelTransitionManager.tscn"

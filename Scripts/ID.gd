@@ -19,3 +19,8 @@ enum CombatantID {
 	None = 0,
 	ExampleCombatant = 1,
 }
+
+enum InteractionID {
+	None = 0,
+	ExampleInteraction = 1,
+}

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://sr5u4s5mom1j"]
 
-[ext_resource type="Script" uid="uid://bt0websrasife" path="res://Scripts/Item/EquipData.gd" id="1_kkb8q"]
-[ext_resource type="Script" uid="uid://bhjvfxs51vg5p" path="res://Scripts/Item/ItemData.gd" id="2_frvl4"]
+[ext_resource type="Script" uid="uid://bt0websrasife" path="res://Scripts/Item/equip_data.gd" id="1_kkb8q"]
+[ext_resource type="Script" uid="uid://bhjvfxs51vg5p" path="res://Scripts/Item/item_data.gd" id="2_frvl4"]
 
 [sub_resource type="Resource" id="Resource_vjk8n"]
 script = ExtResource("1_kkb8q")

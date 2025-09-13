@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 			self.queue_free()
 
 func interact() -> void:
+	super()
 	var timeline = "%s_msg" % dialogic_name
 	print("Playing %s" % timeline)
 	DialogueScreen.play_timeline(timeline)
