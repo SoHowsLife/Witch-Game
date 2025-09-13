@@ -10,4 +10,3 @@ func interact() -> void:
 	var timeline = "%s_msg" % dialogic_name
 	print("Playing %s" % timeline)
 	DialogueScreen.play_timeline(timeline)
-	QuestManager.activate_quest(ID.QuestID.ExampleQuest)

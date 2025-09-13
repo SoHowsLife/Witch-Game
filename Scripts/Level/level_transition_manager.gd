@@ -1,5 +1,7 @@
 extends Control
 
+signal level_transitioned
+
 @onready var animation = $AnimationPlayer
 
 func level_transition(level: String, id: int):

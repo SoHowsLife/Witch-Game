@@ -1,15 +1,9 @@
 extends Node
 
-signal quest_activated
-signal quest_completed
-signal interacted
-
-enum ObjectiveType {
-	COLLECT,
-	SLAY,
-	DESTINATION,
-	INTERACT,
-}
+signal quest_activated(quest: Quest)
+signal quest_completed(quest: Quest)
+signal quest_objective_completed(objective: QuestObjective)
+signal interacted(interaction: ID.InteractionID)
 
 var _active_quests : Array[Quest]
 var _completed_quests : Array[Quest]
@@ -18,6 +12,7 @@ var _folder_path : String = "res://Data/Quests/"
 func _ready():
 	Inventory.inventory_changed.connect(_on_item_collected)
 	interacted.connect(_on_interaction)
+	LevelTransitionManager.level_transitioned.connect(_on_destination_reached)
 	
 func _process(delta):
 	pass
@@ -42,6 +37,8 @@ func load_quest_data(quest_dict : Dictionary):
 	_completed_quests = quest_dict.get("completed")
 
 func activate_quest(quest_id : ID.QuestID):
+	if quest_id == ID.QuestID.None:
+		return
 	var quest : Quest = _load_quest(quest_id)
 	if quest and not get_active_quest(quest_id) and (not get_completed_quest(quest_id) or quest.recurring):
 		_active_quests.append(quest)
@@ -61,6 +58,8 @@ func get_completed_quest(quest_id: ID.QuestID) -> Quest:
 
 ## Complete quest by ID
 func complete_quest(quest_id : ID.QuestID):
+	if quest_id == ID.QuestID.None:
+		return
 	if _check_quest_completed(quest_id):
 		for i in _active_quests.size():
 			if _active_quests[i].quest_id == quest_id:
@@ -78,21 +77,33 @@ func _check_quest_completed(quest_id : ID.QuestID) -> bool:
 	else:
 		return false
 
-func _on_item_collected(item_id: ID.ItemID, amnt: int):
+func _on_item_collected(item: ID.ItemID, amnt: int):
 	for q in _active_quests:
 		for o in q.objectives:
 			if o is ItemQuestObjective:
-				o = o as ItemQuestObjective
-				if o.item == item_id:
+				if o.item == item:
 					o.progress = amnt
 					if o.progress >= o.amount:
 						o.completed = true
+						quest_objective_completed.emit(o)
 
-func _on_enemy_slain(name: StringName, amnt: int):
-	pass
+func _on_combatant_defeated(combatant: ID.CombatantID):
+	for q in _active_quests:
+		for o in q.objectives:
+			if o is DefeatQuestObjective:
+				if o.combatant == combatant:
+					o.progress += 1
+					if o.progress >= o.amount:
+						o.completed = true
+						quest_objective_completed.emit(o)
 
-func _on_destination_reached(destination: StringName):
-	pass
+func _on_destination_reached(destination: String):
+	for q in _active_quests:
+		for o in q.objectives:
+			if o is DestinationQuestObjective:
+				if o.destination == destination:
+					o.completed = true
+					quest_objective_completed.emit(o)
 					
 func _on_interaction(interaction: ID.InteractionID):
 	for q in _active_quests:
@@ -100,6 +111,7 @@ func _on_interaction(interaction: ID.InteractionID):
 			if o is InteractionQuestObjective:
 				if o.interaction == interaction:
 					o.completed = true
+					quest_objective_completed.emit(o)
 
 ## Returns a loaded quest from the quest folder
 func _load_quest(quest_id : ID.QuestID) -> Quest:
