@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dkrlcpywpbq4r"]
+
+[ext_resource type="Texture2D" uid="uid://di1bhl6h0c5yo" path="res://Models/3D Models/Skunk Area_Cave Wall.png" id="1_bcnp0"]
+
+[resource]
+resource_name = "Cave Wall"
+cull_mode = 2
+albedo_texture = ExtResource("1_bcnp0")
+roughness = 0.5
+texture_filter = 2

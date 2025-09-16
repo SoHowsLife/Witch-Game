@@ -45,6 +45,14 @@ _subresources={
 "Tree Wood": {
 "use_external/enabled": true,
 "use_external/path": "uid://dwv741np0pd4n"
+},
+"Wood Planks": {
+"use_external/enabled": true,
+"use_external/path": "uid://c3as164prrrtj"
+},
+"Wooden Beam": {
+"use_external/enabled": true,
+"use_external/path": "uid://eyqki30eexmh"
 }
 }
 }

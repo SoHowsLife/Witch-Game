@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctjutoj1h1dvw"]
+[gd_scene load_steps=8 format=3 uid="uid://b2cyi67a06p75"]
 
 [ext_resource type="Script" uid="uid://bgbgy4eb24rtm" path="res://Scripts/Level/level_start_pos.gd" id="1_vgck3"]
 [ext_resource type="Script" uid="uid://bhuu5a0ihcfbi" path="res://Scripts/player_camera.gd" id="2_f6ngi"]
@@ -35,7 +35,6 @@ visible = false
 sky_mode = 2
 
 [node name="Cave Area" parent="." instance=ExtResource("5_vgck3")]
-metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Cave Area"]
 

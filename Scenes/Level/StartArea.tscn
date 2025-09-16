@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dw4tb42mb3b48"]
+[gd_scene load_steps=10 format=3 uid="uid://dw4tb42mb3b48"]
 
 [ext_resource type="Script" uid="uid://bgbgy4eb24rtm" path="res://Scripts/Level/level_start_pos.gd" id="1_vaka2"]
 [ext_resource type="Script" uid="uid://bhuu5a0ihcfbi" path="res://Scripts/player_camera.gd" id="2_72uea"]
 [ext_resource type="PackedScene" uid="uid://c7iut5oc6i8an" path="res://Scenes/Player.tscn" id="3_pleka"]
 [ext_resource type="PackedScene" uid="uid://c06nfq0qp0lsh" path="res://Models/3D Models/Start Area.glb" id="4_72uea"]
 [ext_resource type="Script" uid="uid://e2nnrd448mgb" path="res://Scripts/Level/level_transition.gd" id="5_awd6t"]
-[ext_resource type="PackedScene" uid="uid://cx0h1mdvi1ea2" path="res://Models/3D Models/Village Area.glb" id="6_72uea"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pt7rl"]
 size = Vector3(32.3674, 8.69055, 7.9697)
@@ -76,6 +75,3 @@ target_level = "VillageArea"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Start Area/LoadingArea"]
 shape = SubResource("BoxShape3D_sdpi2")
-
-[node name="Village Area" parent="." instance=ExtResource("6_72uea")]
-transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 0.73, 48.4529, 0, 0)

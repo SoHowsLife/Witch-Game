@@ -34,6 +34,10 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
+"Cave Wall": {
+"use_external/enabled": true,
+"use_external/path": "uid://dkrlcpywpbq4r"
+},
 "Ground": {
 "use_external/enabled": true,
 "use_external/path": "uid://dwv741np0pd4n"
@@ -42,19 +46,11 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "uid://box2fp8jwl32o"
 },
-"Roof": {
-"use_external/enabled": true,
-"use_external/path": "uid://cc8mmnujy0cl8"
-},
 "Tree Wood": {
 "use_external/enabled": true,
 "use_external/path": "uid://dwv741np0pd4n"
-},
-"Water": {
-"use_external/enabled": true,
-"use_external/path": "uid://bnegfsxykyqx4"
 }
 }
 }
 gltf/naming_version=1
-gltf/embedded_image_handling=0
+gltf/embedded_image_handling=1

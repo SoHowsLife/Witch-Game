@@ -34,6 +34,10 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
+"Gradient": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/3D Models/Materials/Gradient.tres"
+},
 "Ground": {
 "use_external/enabled": true,
 "use_external/path": "uid://dwv741np0pd4n"

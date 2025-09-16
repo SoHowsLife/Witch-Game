@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://yflga1lhffdl"]
+
+[ext_resource type="Texture2D" uid="uid://coj8a2id760bb" path="res://Models/3D Models/Skunk Area_Gradients.png" id="1_b8veo"]
+
+[resource]
+resource_name = "Gradient"
+cull_mode = 2
+albedo_texture = ExtResource("1_b8veo")
+texture_filter = 0

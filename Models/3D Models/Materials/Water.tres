@@ -1,7 +1,11 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://bnegfsxykyqx4"]
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bnegfsxykyqx4"]
+
+[ext_resource type="Texture2D" uid="uid://i0u62bjd5vqy" path="res://Models/3D Models/Watering Hole Area_Water.png" id="1_p5dxa"]
 
 [resource]
 resource_name = "Water"
 cull_mode = 2
 albedo_color = Color(0.328488, 0.579159, 0.906422, 1)
+albedo_texture = ExtResource("1_p5dxa")
 roughness = 0.5
+texture_filter = 0
