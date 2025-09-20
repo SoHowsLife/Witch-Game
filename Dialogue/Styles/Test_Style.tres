@@ -6,7 +6,6 @@
 
 [sub_resource type="Resource" id="Resource_pb8dt"]
 script = ExtResource("1_lkk23")
-overrides = {}
 
 [sub_resource type="Resource" id="Resource_f0a5k"]
 script = ExtResource("1_lkk23")
@@ -23,6 +22,4 @@ layer_info = {
 "": SubResource("Resource_pb8dt"),
 "10": SubResource("Resource_f0a5k")
 }
-base_overrides = {}
-layers = Array[ExtResource("1_lkk23")]([])
 metadata/_latest_layer = "10"

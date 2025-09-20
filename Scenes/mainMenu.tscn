@@ -1,27 +1,49 @@
-[gd_scene format=3 uid="uid://c5w5e7ihaoy3r"]
+[gd_scene load_steps=3 format=3 uid="uid://c5w5e7ihaoy3r"]
+
+[ext_resource type="Script" uid="uid://bwqtsg6peg8b8" path="res://Scripts/main_menu.gd" id="1_60k44"]
+[ext_resource type="Texture2D" uid="uid://c83owxv4hf0sj" path="res://Sprites/Screenshot_28.png" id="2_5pknu"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-grow_vertical = 0
+anchors_preset = 0
+size_flags_horizontal = 0
+script = ExtResource("1_60k44")
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = -57.0
+offset_right = 1145.0
+offset_bottom = 742.0
+size_flags_horizontal = 0
+texture = ExtResource("2_5pknu")
+stretch_mode = 4
+
+[node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_left = 25.0
+offset_top = 511.0
+offset_right = 95.0
+offset_bottom = 612.0
 grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="Buttons"]
 layout_mode = 2
+text = "Play"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Option" type="Button" parent="Buttons"]
 layout_mode = 2
+text = "Options"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Exit" type="Button" parent="Buttons"]
 layout_mode = 2
+text = "Exit"
+
+[connection signal="button_down" from="Buttons/Start" to="." method="_on_start_button_down"]
+[connection signal="button_down" from="Buttons/Option" to="." method="_on_option_button_down"]
+[connection signal="button_down" from="Buttons/Exit" to="." method="_on_exit_button_down"]
